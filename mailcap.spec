@@ -7,7 +7,7 @@ Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
 Version:	2.1.9
-Release:	3
+Release:	4
 License:	public domain
 Group:		Base
 Group(cs):	Základ
@@ -80,5 +80,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%config %{_sysconfdir}/*
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/*
 %{_mandir}/man4/*
