@@ -13,8 +13,8 @@ Group:		Base
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	6d4a51602a51a860255367a390ff3fc7
 Patch0:		%{name}-application.x-ns-proxy-autoconfig.patch
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Buildarch:	noarch
 
 %description
 The mailcap file is used by the metamail program. Metamail reads the
