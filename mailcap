@@ -51,6 +51,8 @@ application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"; test=[ -z "$DISPLAY" ]
 
+application/vnd.ms-excel; /usr/bin/oocalc %s; test=[ -n "$DISPLAY" -a -x /usr/bin/oocalc ]
+
 application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
 	{ /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks "$tmp/page.html"\; \
@@ -65,6 +67,8 @@ application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/ppthtml %s > "$tmp/page.html"\; \
 	/usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"; test=[ -z "$DISPLAY" ]
+
+application/vnd.ms-powerpoint; /usr/bin/ooimpress %s; test=[ -n "$DISPLAY" -a -x /usr/bin/ooimpress ]
 
 application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/ppthtml %s > "$tmp/page.html"\; \
