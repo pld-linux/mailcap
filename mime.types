@@ -203,7 +203,7 @@ application/vnd.ms-artgalry
 application/vnd.ms-asf
 application/vnd.ms-excel	xls
 application/vnd.ms-lrm
-application/vnd.ms-powerpoint	ppt
+application/vnd.ms-powerpoint	ppt pps
 application/vnd.ms-project
 application/vnd.ms-tnef
 application/vnd.ms-works
@@ -316,6 +316,7 @@ application/x-koan		skp skd skt skm
 application/x-latex		latex
 application/x-netcdf		nc cdf
 application/x-ns-proxy-autoconfig	dat
+application/x-rar-compressed	rar
 # This conflicts with audio/x-pn-realaudio-plugin, which is commented out below.
 application/x-rpm		rpm
 application/x-sh		sh
@@ -486,7 +487,7 @@ video/vnd.mpegurl		mxu
 video/vnd.mts
 video/vnd.nokia.interleaved-multimedia
 video/vnd.vivo
-video/x-msvideo			avi
+video/x-msvideo			avi wmv
 video/x-sgi-movie		movie
 x-conference/x-cooltalk		ice
 text/x-component                htc
