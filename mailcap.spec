@@ -6,12 +6,12 @@ Summary(pl):	Definiuje rozszerzenia multimedialne dla róznych programów
 Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
-Version:	2.1.9
-Release:	5
+Version:	2.1.14
+Release:	1
 License:	Public Domain
 Group:		Base
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	ae72570ee9b958f303f514df0cc775b3
+# Source0-md5:	6d4a51602a51a860255367a390ff3fc7
 Patch0:		%{name}-application.x-ns-proxy-autoconfig.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
