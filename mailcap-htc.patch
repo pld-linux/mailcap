@@ -1,0 +1,8 @@
+diff -Nur mailcap-2.1.14.orig/mime.types mailcap-2.1.14/mime.types
+--- mailcap-2.1.14.orig/mime.types	2003-07-11 18:56:57.000000000 +0200
++++ mailcap-2.1.14/mime.types	2004-05-15 13:16:45.000000000 +0200
+@@ -488,3 +488,4 @@
+ video/x-msvideo			avi
+ video/x-sgi-movie		movie
+ x-conference/x-cooltalk		ice
++text/x-component                htc
