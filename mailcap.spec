@@ -1,17 +1,30 @@
 Summary:	Defines multimedia helper applications for various programs
 Summary(de):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
+Summary(es):	Define aplicaciones auxiliares multimedia para varios programas
 Summary(fr):	Définit une aide multimédia pour de nombreuses applications
 Summary(pl):	Definiuje rozszerzenia multimedialne dla róznych programów
+Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
-Version:	2.0.9
+Version:	2.1.9
 Release:	3
 License:	public domain
 Group:		Base
-Group(de):	Gründsätzlich
+Group(cs):	Základ
+Group(da):	Basal
+Group(de):	Basis
 Group(es):	Base
+Group(fr):	Base
+Group(is):	Grunnforrit
+Group(it):	Base
+Group(ja):	¥Ù¡¼¥¹
+Group(no):	Basis
 Group(pl):	Podstawowe
+Group(pt):	Base
 Group(pt_BR):	Base
+Group(ru):	âÁÚÏ×ÙÊ ÎÁÂÏÒ
+Group(sl):	Osnova
+Group(sv):	Bas
 Source0:	%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
@@ -27,6 +40,11 @@ order to handle the file.
 Wenn es installiert ist, können Programme wie 'lynx' automatically
 'zgv' zum Darstellen von Bildern verwenden (zgv muß installiert sein).
 
+%description -l es
+Este es el paquete Red Hat Mailcap. Al instalarlo podrás hacer que
+programas como lynx usen automáticamente zgv para enseñar imágenes
+(con zgv instalado).
+
 %description -l fr
 L'installer permettra à des programmes come lynx d'utiliser
 automatiquement zgv pour afficher des images (pourvu que zgv soit
@@ -36,6 +54,11 @@ installé).
 Plik mailcap jest u¿ywany przez program metamail i inne. Pakiet ten
 pozwoli na automatyczne wy¶wietlanie grafiki przez programy takie jak
 lynx, przy u¿yciu zgv.
+
+%description -l pt_BR
+Este é o pacote Red Hat Mailcap. Instalando você poderá fazer com que
+programas como lynx automaticamente usem zgv para mostrar figuras (com
+o zgv instalado).
 
 %description -l tr
 lynx gibi programlarýn resim göstermek için otomatik olarak zgv
