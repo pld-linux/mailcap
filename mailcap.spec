@@ -8,7 +8,7 @@ Version:     1.0
 Release:     3
 Copyright:   public domain
 Group:       Base
-Group:       Podstawowe
+Group(pl):   Podstawowe
 Source:      %{name}-%{version}.tar.gz
 Source1:     mime.types
 Patch:       %{name}-%{version}-mikmod.patch
