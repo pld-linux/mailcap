@@ -10,7 +10,7 @@ Copyright:	public domain
 Group:		Base
 Group(pl):	Podstawowe
 Source:		%{name}-%{version}.tar.gz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
 %description
