@@ -7,10 +7,11 @@ Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
 Version:	2.1.9
-Release:	4
+Release:	5
 License:	Public Domain
 Group:		Base
 Source0:	%{name}-%{version}.tar.gz
+Patch0:		%{name}-application.x-ns-proxy-autoconfig.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
@@ -51,6 +52,7 @@ paketini kullanamalarýna olanak saðlar (zgv kurulmuþ olmalý).
 
 %prep
 %setup -q
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
