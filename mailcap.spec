@@ -10,10 +10,9 @@ Version:	2.1.14
 Release:	2
 License:	Public Domain
 Group:		Base
-Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	6d4a51602a51a860255367a390ff3fc7
-Patch0:		%{name}-application.x-ns-proxy-autoconfig.patch
-Patch1:		%{name}-htc.patch
+Source0:	mailcap
+Source1:	mailcap.4
+Source2:	mime.types
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,17 +52,15 @@ lynx gibi programlarýn resim göstermek için otomatik olarak zgv
 paketini kullanamalarýna olanak saðlar (zgv kurulmuþ olmalý).
 
 %prep
-%setup -q
-%patch0 -p1
-%patch1 -p1
+%setup -q -c -T
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/{etc,%{_mandir}/man4}
 
-install mailcap mime.types $RPM_BUILD_ROOT%{_sysconfdir}
-install mailcap.4 $RPM_BUILD_ROOT%{_mandir}/man4
+install %{SOURCE0} %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man4
 
 %clean
 rm -rf $RPM_BUILD_ROOT
