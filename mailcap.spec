@@ -2,7 +2,7 @@ Summary:	Defines multimedia helper applications for various programs
 Summary(de):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
 Summary(es):	Define aplicaciones auxiliares multimedia para varios programas
 Summary(fr):	Définit une aide multimédia pour de nombreuses applications
-Summary(pl):	Definiuje rozszerzenia multimedialne dla róznych programów
+Summary(pl):	Definiuje rozszerzenia multimedialne dla ró¿nych programów
 Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
