@@ -11,6 +11,7 @@ Release:	5
 License:	Public Domain
 Group:		Base
 Source0:	%{name}-%{version}.tar.gz
+# Source0-md5: 
 #Source0-md5:	ae72570ee9b958f303f514df0cc775b3
 Patch0:		%{name}-application.x-ns-proxy-autoconfig.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
