@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/{etc,%{_mandir}/man4}
 
-install mailcap mailcap.vga $RPM_BUILD_ROOT/etc
+install mailcap mailcap.vga mime.types $RPM_BUILD_ROOT/etc
 
 install mailcap.4 $RPM_BUILD_ROOT%{_mandir}/man4
 
