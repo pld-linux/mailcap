@@ -22,7 +22,7 @@ application/postscript; /usr/bin/ps2ascii %s; copiousoutput
 
 text/html; /usr/bin/htmlview %s; copiousoutput; test=[ -x /usr/bin/htmlview ]
 text/html; /usr/bin/elinks %s; nametemplate=%s.html; test=[ -z "$DISPLAY" ]
-text/html; /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks %s & /bin/sleep 1; nametemplate=%s.html; test=[ -n "$DISPLAY" ]
+text/html; /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks %s & /bin/sleep 1; nametemplate=%s.html; test=[ -n "$DISPLAY" ]
 text/html; /usr/bin/elinks -dump %s; copiousoutput
 
 #text/x-patch; /usr/bin/colordiff.pl < %s | less -r
@@ -38,7 +38,7 @@ application/msword; /usr/bin/oowriter %s; test=[ -n "$DISPLAY" -a -x /usr/bin/oo
 
 application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/wvHtml %s --targetdir="$tmp" page.html\; \
-	{ /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
 
 application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
@@ -55,7 +55,7 @@ application/vnd.ms-excel; /usr/bin/oocalc %s; test=[ -n "$DISPLAY" -a -x /usr/bi
 
 application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
-	{ /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
 
 application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
@@ -72,7 +72,7 @@ application/vnd.ms-powerpoint; /usr/bin/ooimpress %s; test=[ -n "$DISPLAY" -a -x
 
 application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/ppthtml %s > "$tmp/page.html"\; \
-	{ /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
 
 application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
