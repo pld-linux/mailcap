@@ -8,7 +8,8 @@ Version:	2.0.9
 Release:	3
 Copyright:	public domain
 Group:		Base
-Group(pl):	Bazowe
+Group(de):	Gründsätzlich
+Group(pl):	Podstawowe
 Source0:	%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
