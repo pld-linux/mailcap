@@ -1,4 +1,4 @@
-image/*; /usr/bin/eog %s; test=[ -x /usr/bin/eog ]
+image/*; /usr/bin/eog %s; test=[ -n "$DISPLAY" -a -x /usr/bin/eog ]
 image/*; /usr/bin/qiv %s; test=[ -n "$DISPLAY" ]
 
 audio/mod; /usr/bin/mikmod %s
