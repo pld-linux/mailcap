@@ -66,13 +66,3 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/*
 
 %{_mandir}/man4/*
-
-%changelog
-* Sun Nov 08 1998 Marek Obuchowicz <elephant@shadow.eu.org>
-  [1.0-2]
-- added new mime.types.
-
-* Sun Nov 08 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [1.0-1]
-- build for PLD,
-- major changes.
