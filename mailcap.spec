@@ -7,7 +7,7 @@ Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	2.1.9
-Release:	4
+Release:	5
 License:	public domain
 Group:		Base
 Group(cs):	Základ
@@ -26,6 +26,7 @@ Group(ru):	âÁÚÏ×ÙÊ ÎÁÂÏÒ
 Group(sl):	Osnova
 Group(sv):	Bas
 Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	ae72570ee9b958f303f514df0cc775b3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
