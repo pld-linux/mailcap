@@ -1,0 +1,13 @@
+- changed all BuildRoot definitons
+- removed all applnkdir defs
+- changed some prereqs/requires
+- removed duplicate empty lines
+
+* Sun Nov 08 1998 Marek Obuchowicz <elephant@shadow.eu.org>
+  [1.0-2]
+- added new mime.types.
+
+* Sun Nov 08 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
+  [1.0-1]
+- build for PLD,
+- major changes.
