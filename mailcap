@@ -29,6 +29,23 @@ text/html; /usr/bin/elinks -dump %s; copiousoutput
 
 application/x-shockwave-flash; /usr/bin/swfplayer %s & sleep 2; test=[ -n "$DISPLAY" ]
 
+application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	cd "$tmp"\; /usr/bin/soffice2html.pl %s\; \
+	/usr/bin/elinks content.html\; \
+	/bin/rm -rf "$tmp"; test=[ -z "$DISPLAY" ]
+
+application/vnd.sun.xml.writer; /usr/bin/oowriter %s; test=[ -n "$DISPLAY" -a -x /usr/bin/oowriter ]
+
+application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	cd "$tmp"\; /usr/bin/soffice2html.pl %s\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks content.html\; \
+	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
+
+application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	cd "$tmp"\; /usr/bin/soffice2html.pl %s\; \
+	/usr/bin/elinks -dump content.html\; \
+	/bin/rm -rf "$tmp"; copiousoutput
+
 application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/wvHtml %s --targetdir="$tmp" page.html -1\; \
 	/usr/bin/elinks "$tmp/page.html"\; \
@@ -81,3 +98,4 @@ application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
 	/bin/rm -f "$tmp"; copiousoutput
 
 application/x-rar-compressed; /usr/bin/rar v -c- %s; copiousoutput
+application/x-zip-compressed; /usr/bin/unzip -v %s; copiousoutput
