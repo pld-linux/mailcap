@@ -1,11 +1,10 @@
-diff -urN mailcap-2.1.9.orig/mime.types mailcap-2.1.9/mime.types
---- mailcap-2.1.9.orig/mime.types	Wed Oct 24 00:37:49 2001
-+++ mailcap-2.1.9/mime.types	Fri May  9 11:19:56 2003
-@@ -305,6 +305,7 @@
+--- mailcap-2.1.14/mime.types.orig	2003-07-11 16:56:57.000000000 +0000
++++ mailcap-2.1.14/mime.types	2003-07-13 20:43:47.000000000 +0000
+@@ -315,6 +315,7 @@
  application/x-koan		skp skd skt skm
  application/x-latex		latex
  application/x-netcdf		nc cdf
 +application/x-ns-proxy-autoconfig	dat
- 
  # This conflicts with audio/x-pn-realaudio-plugin, which is commented out below.
  application/x-rpm		rpm
+ application/x-sh		sh
