@@ -8,7 +8,7 @@ Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
 Version:	2.1.9
 Release:	4
-License:	public domain
+License:	Public Domain
 Group:		Base
 Source0:	%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
