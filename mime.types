@@ -315,6 +315,7 @@ application/x-killustrator	kil
 application/x-koan		skp skd skt skm
 application/x-latex		latex
 application/x-netcdf		nc cdf
+application/x-ns-proxy-autoconfig	dat
 # This conflicts with audio/x-pn-realaudio-plugin, which is commented out below.
 application/x-rpm		rpm
 application/x-sh		sh
@@ -488,3 +489,4 @@ video/vnd.vivo
 video/x-msvideo			avi
 video/x-sgi-movie		movie
 x-conference/x-cooltalk		ice
+text/x-component                htc
