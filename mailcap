@@ -1,15 +1,79 @@
-### 
-### Begin Red Hat Mailcap
-###
+image/*; /usr/bin/eog %s; test=[ -x /usr/bin/eog ]
+image/*; /usr/bin/qiv %s; test=[ -n "$DISPLAY" ]
 
 audio/mod; /usr/bin/mikmod %s
+
 # play is apparently a security hole
 #audio/*; /usr/bin/play %s
+audio/*; /usr/bin/mplayer -vc null -vo null %s; test=[ -z "$DISPLAY" ]
+audio/*; /usr/X11R6/bin/xterm -name mplayer -e /usr/bin/mplayer -vc null -vo null %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
 
-image/*; eog %s
+video/*; /usr/bin/mplayer -vc null -vo null %s; test=[ -z "$DISPLAY" ]
+video/*; /usr/X11R6/bin/xterm -name mplayer -e /usr/bin/mplayer %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
 
-application/msword; ooffice %s
-application/pdf; xpdf %s
-application/postscript ; gv -safer %s
+video/mpeg; /usr/bin/mplayer -vc null -vo null %s; test=[ -z "$DISPLAY" ]
+video/mpeg; /usr/X11R6/bin/xterm -name mplayer -e /usr/bin/mplayer %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
 
-text/html; /usr/bin/htmlview %s ; copiousoutput
+application/pdf; /usr/bin/xpdf %s; test=[ -n "$DISPLAY" ]
+application/pdf; /usr/bin/pdftotext -layout -nopgbrk %s -; copiousoutput
+
+application/postscript; /usr/bin/gv -safer %s; test=[ -n "$DISPLAY" ]
+application/postscript; /usr/bin/ps2ascii %s; copiousoutput
+
+text/html; /usr/bin/htmlview %s; copiousoutput; test=[ -x /usr/bin/htmlview ]
+text/html; /usr/bin/elinks %s; nametemplate=%s.html; test=[ -z "$DISPLAY" ]
+text/html; /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks %s & /bin/sleep 1; nametemplate=%s.html; test=[ -n "$DISPLAY" ]
+text/html; /usr/bin/elinks -dump %s; copiousoutput
+
+#text/x-patch; /usr/bin/colordiff.pl < %s | less -r
+
+application/x-shockwave-flash; /usr/bin/swfplayer %s & sleep 2; test=[ -n "$DISPLAY" ]
+
+application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/wvHtml %s --targetdir="$tmp" page.html -1\; \
+	/usr/bin/elinks "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"; test=[ -z "$DISPLAY" ]
+
+application/msword; /usr/bin/oowriter %s; test=[ -n "$DISPLAY" -a -x /usr/bin/oowriter ]
+
+application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/wvHtml %s --targetdir="$tmp" page.html\; \
+	{ /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
+
+application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/wvHtml %s --targetdir="$tmp" page.html -1\; \
+	/usr/bin/elinks -dump "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"; copiousoutput
+
+application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
+	/usr/bin/elinks "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"; test=[ -z "$DISPLAY" ]
+
+application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
+
+application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
+	/usr/bin/elinks -dump "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"; copiousoutput
+
+application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/ppthtml %s > "$tmp/page.html"\; \
+	/usr/bin/elinks "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"; test=[ -z "$DISPLAY" ]
+
+application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
+	/usr/bin/ppthtml %s > "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm.elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
+
+application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
+	/usr/bin/ppthtml %s > "$tmp"\; \
+	/usr/bin/elinks -dump "$tmp"\; \
+	/bin/rm -f "$tmp"; copiousoutput
+
+application/x-rar-compressed; /usr/bin/rar v -c- %s; copiousoutput
