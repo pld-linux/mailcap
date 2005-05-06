@@ -2,7 +2,7 @@ Summary:	Defines multimedia helper applications for various programs
 Summary(de):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
 Summary(es):	Define aplicaciones auxiliares multimedia para varios programas
 Summary(fr):	Définit une aide multimédia pour de nombreuses applications
-Summary(pl):	Definiuje rozszerzenia multimedialne dla ró¿nych programów
+Summary(pl):	Definicje rozszerzeñ multimedialnych dla ró¿nych programów
 Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
@@ -56,8 +56,7 @@ paketini kullanamalarýna olanak saðlar (zgv kurulmuþ olmalý).
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT/{etc,%{_mandir}/man4}
+install -d $RPM_BUILD_ROOT{/etc,%{_mandir}/man4}
 
 install %{SOURCE0} %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man4
