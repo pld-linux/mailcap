@@ -455,6 +455,7 @@ text/sgml			sgml sgm
 text/tab-separated-values	tsv
 text/t140
 text/uri-list
+text/vbscript			vbs
 text/vnd.DMClientScript
 text/vnd.IPTC.NITF
 text/vnd.IPTC.NewsML
@@ -487,6 +488,7 @@ video/vnd.mpegurl		mxu
 video/vnd.mts
 video/vnd.nokia.interleaved-multimedia
 video/vnd.vivo
+video/x-flv			flv
 video/x-msvideo			avi wmv
 video/x-sgi-movie		movie
 x-conference/x-cooltalk		ice
