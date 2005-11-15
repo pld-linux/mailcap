@@ -1,3 +1,6 @@
+#3 $Revision: 1.32 $, $Date: 2005-11-15 13:46:48 $
+# TODO
+# - use IANA as source http://www.iana.org/assignments/media-types/ ?
 Summary:	Defines multimedia helper applications for various programs
 Summary(de):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
 Summary(es):	Define aplicaciones auxiliares multimedia para varios programas
@@ -7,7 +10,7 @@ Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
 Version:	2.1.14
-Release:	4
+Release:	5
 License:	Public Domain
 Group:		Base
 Source0:	mailcap
