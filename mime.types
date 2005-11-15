@@ -26,7 +26,6 @@ application/dec-dx
 application/dvcs
 application/eshop
 application/font-tdpfr
-application/futuresplash spl
 application/http
 application/hyperstudio
 application/iges
@@ -307,7 +306,7 @@ application/x-director		dcr dir dxr
 application/x-dvi		dvi
 application/x-futuresplash	spl
 application/x-gtar		gtar
-application/x-gzip		gz tgz
+application/x-gzip		gz
 application/x-hdf		hdf
 application/x-javascript	js
 application/x-kchart		chrt
@@ -451,7 +450,6 @@ text/css			css
 text/directory
 text/enriched
 text/html			html htm
-text/javascript js
 text/parityfec
 text/plain			asc txt
 text/prs.lines.tag
@@ -498,7 +496,6 @@ video/vnd.nokia.interleaved-multimedia
 video/vnd.vivo
 video/x-flv			flv
 video/x-ms-asf asf asx
-video/x-ms-wmv wmv
 video/x-msvideo			avi wmv
 video/x-sgi-movie		movie
 x-conference/x-cooltalk		ice
