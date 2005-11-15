@@ -25,6 +25,7 @@ application/dca-rft
 application/dec-dx
 application/dvcs
 application/eshop
+application/font-tdpfr
 application/http
 application/hyperstudio
 application/iges
@@ -36,7 +37,6 @@ application/index.vnd
 application/iotp
 application/ipp
 application/isup
-application/font-tdpfr
 application/mac-binhex40	hqx
 application/mac-compactpro	cpt
 application/macwriteii
@@ -92,8 +92,8 @@ application/vnd.aether.imp
 application/vnd.anser-web-certificate-issue-initiation
 application/vnd.anser-web-funds-transfer-initiation
 application/vnd.audiograph
-application/vnd.businessobjects
 application/vnd.bmi
+application/vnd.businessobjects
 application/vnd.canon-cpdl
 application/vnd.canon-lips
 application/vnd.claymore
@@ -102,10 +102,10 @@ application/vnd.commonspace
 application/vnd.comsocaller
 application/vnd.contact.cmsg
 application/vnd.cosmocaller
+application/vnd.ctc-posml
 application/vnd.cups-postscript
 application/vnd.cups-raster
 application/vnd.cups-raw
-application/vnd.ctc-posml
 application/vnd.cybank
 application/vnd.dna
 application/vnd.dpgraph
@@ -153,8 +153,8 @@ application/vnd.hp-hpid
 application/vnd.hp-hps
 application/vnd.httphone
 application/vnd.hzn-3d-crossword
-application/vnd.ibm.afplinedata
 application/vnd.ibm.MiniPay
+application/vnd.ibm.afplinedata
 application/vnd.ibm.modcap
 application/vnd.informix-visionary
 application/vnd.intercon.formnet
@@ -242,17 +242,17 @@ application/vnd.shana.informed.package
 application/vnd.sss-cod
 application/vnd.sss-dtf
 application/vnd.sss-ntf
-application/vnd.sun.xml.writer	sxw
-application/vnd.sun.xml.writer.template	stw
+application/vnd.street-stream
 application/vnd.sun.xml.calc	sxc
 application/vnd.sun.xml.calc.template	stc
 application/vnd.sun.xml.draw	sxd
 application/vnd.sun.xml.draw.template	std
 application/vnd.sun.xml.impress	sxi
 application/vnd.sun.xml.impress.template	sti
-application/vnd.sun.xml.writer.global	sxg
 application/vnd.sun.xml.math	sxm
-application/vnd.street-stream
+application/vnd.sun.xml.writer	sxw
+application/vnd.sun.xml.writer.global	sxg
+application/vnd.sun.xml.writer.template	stw
 application/vnd.svd
 application/vnd.swiftview-ics
 application/vnd.triscape.mxs
@@ -262,8 +262,8 @@ application/vnd.tve-trigger
 application/vnd.ufdl
 application/vnd.uplanet.alert
 application/vnd.uplanet.alert-wbxml
-application/vnd.uplanet.bearer-choice-wbxml
 application/vnd.uplanet.bearer-choice
+application/vnd.uplanet.bearer-choice-wbxml
 application/vnd.uplanet.cacheop
 application/vnd.uplanet.cacheop-wbxml
 application/vnd.uplanet.channel
@@ -307,12 +307,12 @@ application/x-gtar		gtar
 application/x-gzip		gz tgz
 application/x-hdf		hdf
 application/x-javascript	js
-application/x-kword		kwd kwt
-application/x-kspread		ksp
-application/x-kpresenter	kpr kpt
 application/x-kchart		chrt
 application/x-killustrator	kil
 application/x-koan		skp skd skt skm
+application/x-kpresenter	kpr kpt
+application/x-kspread		ksp
+application/x-kword		kwd kwt
 application/x-latex		latex
 application/x-netcdf		nc cdf
 application/x-ns-proxy-autoconfig	dat
@@ -452,8 +452,8 @@ text/rfc822-headers
 text/richtext			rtx
 text/rtf			rtf
 text/sgml			sgml sgm
-text/tab-separated-values	tsv
 text/t140
+text/tab-separated-values	tsv
 text/uri-list
 text/vbscript			vbs
 text/vnd.DMClientScript
@@ -473,6 +473,7 @@ text/vnd.wap.si
 text/vnd.wap.sl
 text/vnd.wap.wml		wml
 text/vnd.wap.wmlscript		wmls
+text/x-component                htc
 text/x-setext			etx
 text/xml			xml xsl
 text/xml-external-parsed-entity
@@ -492,4 +493,5 @@ video/x-flv			flv
 video/x-msvideo			avi wmv
 video/x-sgi-movie		movie
 x-conference/x-cooltalk		ice
-text/x-component                htc
+
+# vim:ts=8:sw=8
