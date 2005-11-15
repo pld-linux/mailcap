@@ -26,6 +26,7 @@ application/dec-dx
 application/dvcs
 application/eshop
 application/font-tdpfr
+application/futuresplash spl
 application/http
 application/hyperstudio
 application/iges
@@ -55,7 +56,7 @@ application/parityfec
 application/pdf			pdf
 application/pgp-encrypted
 application/pgp-keys
-application/pgp-signature
+application/pgp-signature sig
 application/pkcs10
 application/pkcs7-mime
 application/pkcs7-signature
@@ -294,6 +295,8 @@ application/whoispp-response
 application/wita
 application/wordperfect5.1
 application/x-bcpio		bcpio
+application/x-bittorrent torrent
+application/x-bzip-compressed-tar tar.bz2 tbz
 application/x-bzip2		bz2
 application/x-cdlink		vcd
 application/x-chess-pgn		pgn
@@ -329,6 +332,7 @@ application/x-tar		tar
 application/x-tcl		tcl
 application/x-tex		tex
 application/x-texinfo		texinfo texi
+application/x-tgz tar.gz tgz
 application/x-troff		t tr roff
 application/x-troff-man		man
 application/x-troff-me		me
@@ -369,6 +373,8 @@ audio/vnd.rhetorex.32kadpcm
 audio/vnd.vmx.cvsd
 audio/x-aiff			aif aiff aifc
 audio/x-mpegurl			m3u
+audio/x-ms-wax wax
+audio/x-ms-wma wma
 audio/x-pn-realaudio		ram rm
 #audio/x-pn-realaudio-plugin	rpm
 audio/x-realaudio		ra
@@ -445,6 +451,7 @@ text/css			css
 text/directory
 text/enriched
 text/html			html htm
+text/javascript js
 text/parityfec
 text/plain			asc txt
 text/prs.lines.tag
@@ -490,6 +497,8 @@ video/vnd.mts
 video/vnd.nokia.interleaved-multimedia
 video/vnd.vivo
 video/x-flv			flv
+video/x-ms-asf asf asx
+video/x-ms-wmv wmv
 video/x-msvideo			avi wmv
 video/x-sgi-movie		movie
 x-conference/x-cooltalk		ice
