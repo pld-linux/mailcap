@@ -1,4 +1,3 @@
-#3 $Revision: 1.32 $, $Date: 2005-11-15 13:46:48 $
 # TODO
 # - use IANA as source http://www.iana.org/assignments/media-types/ ?
 Summary:	Defines multimedia helper applications for various programs
@@ -13,8 +12,8 @@ Version:	2.1.14
 Release:	5
 License:	Public Domain
 Group:		Base
-Source0:	mailcap
-Source1:	mailcap.4
+Source0:	%{name}
+Source1:	%{name}.4
 Source2:	mime.types
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -59,7 +58,7 @@ paketini kullanamalarýna olanak saðlar (zgv kurulmuþ olmalý).
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/etc,%{_mandir}/man4}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_mandir}/man4}
 
 install %{SOURCE0} %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man4
@@ -69,5 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
 %{_mandir}/man4/*
