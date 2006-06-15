@@ -318,6 +318,7 @@ application/x-kword		kwd kwt
 application/x-latex		latex
 application/x-netcdf		nc cdf
 application/x-ns-proxy-autoconfig	dat
+application/x-pkcs7-crl		crl
 application/x-rar-compressed	rar
 # This conflicts with audio/x-pn-realaudio-plugin, which is commented out below.
 application/x-rpm		rpm
@@ -338,6 +339,7 @@ application/x-troff-me		me
 application/x-troff-ms		ms
 application/x-ustar		ustar
 application/x-wais-source	src
+application/x-x509-ca-cert	crt
 application/x400-bp
 application/xhtml+xml		xhtml xht
 application/xml
