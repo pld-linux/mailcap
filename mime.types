@@ -393,6 +393,7 @@ image/png			png
 image/prs.btif
 image/prs.pti
 image/tiff			tiff tif
+image/x-icon			ico
 image/vnd.cns.inf2
 image/vnd.djvu			djvu djv
 image/vnd.dwg
