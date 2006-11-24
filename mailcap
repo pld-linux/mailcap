@@ -99,3 +99,4 @@ application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
 
 application/x-rar-compressed; /usr/bin/rar v -c- %s; copiousoutput
 application/x-zip-compressed; /usr/bin/unzip -v %s; copiousoutput
+application/ms-tnef; /usr/bin/tnef -w %s; copiousoutput
