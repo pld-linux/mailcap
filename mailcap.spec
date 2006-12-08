@@ -9,7 +9,7 @@ Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
 Name:		mailcap
 Version:	2.1.14
-Release:	6
+Release:	7
 License:	Public Domain
 Group:		Base
 Source0:	%{name}
