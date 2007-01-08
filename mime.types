@@ -43,6 +43,7 @@ application/macwriteii
 application/marc
 application/mathematica
 application/mathematica-old
+application/mshelp		hlp chm
 application/msword		doc
 application/news-message-id
 application/news-transmission
