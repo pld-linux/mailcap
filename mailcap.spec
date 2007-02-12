@@ -1,12 +1,12 @@
 # TODO
 # - use IANA as source http://www.iana.org/assignments/media-types/ ?
 Summary:	Defines multimedia helper applications for various programs
-Summary(de):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
-Summary(es):	Define aplicaciones auxiliares multimedia para varios programas
-Summary(fr):	Définit une aide multimédia pour de nombreuses applications
-Summary(pl):	Definicje rozszerzeñ multimedialnych dla ró¿nych programów
-Summary(pt_BR):	Define aplicações auxiliares multimídia para vários programas
-Summary(tr):	Çeþitli programlar için çokluortam yardýmcý uygulamalarý tanýmlar
+Summary(de.UTF-8):   Definiert Multimedia-Hilfsapplikationen fÃ¼r diverse Programme
+Summary(es.UTF-8):   Define aplicaciones auxiliares multimedia para varios programas
+Summary(fr.UTF-8):   DÃ©finit une aide multimÃ©dia pour de nombreuses applications
+Summary(pl.UTF-8):   Definicje rozszerzeÅ„ multimedialnych dla rÃ³Å¼nych programÃ³w
+Summary(pt_BR.UTF-8):   Define aplicaÃ§Ãµes auxiliares multimÃ­dia para vÃ¡rios programas
+Summary(tr.UTF-8):   Ã‡eÅŸitli programlar iÃ§in Ã§okluortam yardÄ±mcÄ± uygulamalarÄ± tanÄ±mlar
 Name:		mailcap
 Version:	2.1.14
 Release:	9
@@ -25,33 +25,33 @@ material. Basically, mailcap associates a particular type of file with
 a particular program that a mail agent or other program can call in
 order to handle the file.
 
-%description -l de
-Wenn es installiert ist, können Programme wie 'lynx' automatically
-'zgv' zum Darstellen von Bildern verwenden (zgv muß installiert sein).
+%description -l de.UTF-8
+Wenn es installiert ist, kÃ¶nnen Programme wie 'lynx' automatically
+'zgv' zum Darstellen von Bildern verwenden (zgv muÃŸ installiert sein).
 
-%description -l es
-Este es el paquete Red Hat Mailcap. Al instalarlo podrás hacer que
-programas como lynx usen automáticamente zgv para enseñar imágenes
+%description -l es.UTF-8
+Este es el paquete Red Hat Mailcap. Al instalarlo podrÃ¡s hacer que
+programas como lynx usen automÃ¡ticamente zgv para enseÃ±ar imÃ¡genes
 (con zgv instalado).
 
-%description -l fr
-L'installer permettra à des programmes come lynx d'utiliser
+%description -l fr.UTF-8
+L'installer permettra Ã  des programmes come lynx d'utiliser
 automatiquement zgv pour afficher des images (pourvu que zgv soit
-installé).
+installÃ©).
 
-%description -l pl
-Plik mailcap jest u¿ywany przez program metamail i inne. Pakiet ten
-pozwoli na automatyczne wy¶wietlanie grafiki przez programy takie jak
-lynx, przy u¿yciu zgv.
+%description -l pl.UTF-8
+Plik mailcap jest uÅ¼ywany przez program metamail i inne. Pakiet ten
+pozwoli na automatyczne wyÅ›wietlanie grafiki przez programy takie jak
+lynx, przy uÅ¼yciu zgv.
 
-%description -l pt_BR
-Este é o pacote Red Hat Mailcap. Instalando você poderá fazer com que
+%description -l pt_BR.UTF-8
+Este Ã© o pacote Red Hat Mailcap. Instalando vocÃª poderÃ¡ fazer com que
 programas como lynx automaticamente usem zgv para mostrar figuras (com
 o zgv instalado).
 
-%description -l tr
-lynx gibi programlarýn resim göstermek için otomatik olarak zgv
-paketini kullanamalarýna olanak saðlar (zgv kurulmuþ olmalý).
+%description -l tr.UTF-8
+lynx gibi programlarÄ±n resim gÃ¶stermek iÃ§in otomatik olarak zgv
+paketini kullanamalarÄ±na olanak saÄŸlar (zgv kurulmuÅŸ olmalÄ±).
 
 %prep
 %setup -q -c -T
