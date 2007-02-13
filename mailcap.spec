@@ -1,12 +1,12 @@
 # TODO
 # - use IANA as source http://www.iana.org/assignments/media-types/ ?
 Summary:	Defines multimedia helper applications for various programs
-Summary(de.UTF-8):   Definiert Multimedia-Hilfsapplikationen für diverse Programme
-Summary(es.UTF-8):   Define aplicaciones auxiliares multimedia para varios programas
-Summary(fr.UTF-8):   Définit une aide multimédia pour de nombreuses applications
-Summary(pl.UTF-8):   Definicje rozszerzeń multimedialnych dla różnych programów
-Summary(pt_BR.UTF-8):   Define aplicações auxiliares multimídia para vários programas
-Summary(tr.UTF-8):   Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
+Summary(de.UTF-8):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
+Summary(es.UTF-8):	Define aplicaciones auxiliares multimedia para varios programas
+Summary(fr.UTF-8):	Définit une aide multimédia pour de nombreuses applications
+Summary(pl.UTF-8):	Definicje rozszerzeń multimedialnych dla różnych programów
+Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários programas
+Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	2.1.14
 Release:	9
