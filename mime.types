@@ -342,6 +342,7 @@ application/x-troff-me		me
 application/x-troff-ms		ms
 application/x-ustar		ustar
 application/x-wais-source	src
+application/x-windows-gadget	gadget
 application/x-x509-ca-cert	crt
 application/x400-bp
 application/xhtml+xml		xhtml xht
