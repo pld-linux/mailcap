@@ -43,6 +43,7 @@ application/macwriteii
 application/marc
 application/mathematica
 application/mathematica-old
+application/mshelp		hlp chm
 application/msword		doc
 application/news-message-id
 application/news-transmission
@@ -138,6 +139,8 @@ application/vnd.fujixerox.ddd
 application/vnd.fujixerox.docuworks
 application/vnd.fujixerox.docuworks.binder
 application/vnd.fut-misnet
+application/vnd.google-earth.kml+xml	kml
+application/vnd.google-earth.kmz	kmz
 application/vnd.grafeq
 application/vnd.groove-account
 application/vnd.groove-identity-message
@@ -339,6 +342,7 @@ application/x-troff-me		me
 application/x-troff-ms		ms
 application/x-ustar		ustar
 application/x-wais-source	src
+application/x-windows-gadget	gadget
 application/x-x509-ca-cert	crt
 application/x400-bp
 application/xhtml+xml		xhtml xht
