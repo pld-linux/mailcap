@@ -326,11 +326,6 @@ application/x-rar-compressed	rar
 # This conflicts with audio/x-pn-realaudio-plugin, which is commented out below.
 application/x-rpm		rpm
 application/x-sh		sh
-application/x400-bp
-application/xhtml+xml		xhtml xht
-application/xml
-application/xml-dtd
-application/xml-external-parsed-entity
 application/x-shar		shar
 application/x-shockwave-flash	swf
 application/x-stuffit		sit
@@ -338,16 +333,21 @@ application/x-sv4cpio		sv4cpio
 application/x-sv4crc		sv4crc
 application/x-tar		tar
 application/x-tcl		tcl
-application/x-texinfo		texinfo texi
 application/x-tex		tex
+application/x-texinfo		texinfo texi
 application/x-tgz tar.gz tgz
+application/x-troff		t tr roff
 application/x-troff-man		man
 application/x-troff-me		me
 application/x-troff-ms		ms
-application/x-troff		t tr roff
 application/x-ustar		ustar
 application/x-wais-source	src
 application/x-x509-ca-cert	crt
+application/x400-bp
+application/xhtml+xml		xhtml xht
+application/xml
+application/xml-dtd
+application/xml-external-parsed-entity
 application/zip			zip
 audio/32kadpcm
 audio/basic			au snd
