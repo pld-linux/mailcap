@@ -29,6 +29,8 @@ text/html; /usr/bin/elinks -dump %s; copiousoutput
 
 application/x-shockwave-flash; /usr/bin/swfplayer %s & sleep 2; test=[ -n "$DISPLAY" ]
 
+application/vnd.oasis.opendocument.text; odt2txt %s; copiousoutput; test=[ -z "$DISPLAY" ]
+
 application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	cd "$tmp"\; /usr/bin/soffice2html.pl %s\; \
 	/usr/bin/elinks content.html\; \
