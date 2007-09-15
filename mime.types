@@ -408,6 +408,8 @@ image/naplps
 image/png			png
 image/prs.btif
 image/prs.pti
+image/svg+xml	svg
+image/svg+xml-compressed	svgz
 image/tiff			tiff tif
 image/x-icon			ico
 image/vnd.cns.inf2
