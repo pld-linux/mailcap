@@ -62,7 +62,7 @@ application/index.vnd
 application/iotp
 application/ipp
 application/isup
-application/javascript				js
+application/javascript
 application/json				json
 application/kpml-request+xml
 application/kpml-response+xml
@@ -112,7 +112,7 @@ application/pkcs10				p10
 application/pkcs7-mime				p7m p7c
 application/pkcs7-signature			p7s
 application/pkix-cert				cer
-application/pkix-crl				crl
+application/pkix-crl
 application/pkix-pkipath			pkipath
 application/pkixcmp				pki
 application/pls+xml				pls
@@ -333,9 +333,9 @@ application/vnd.kde.kchart			chrt
 application/vnd.kde.kformula			kfo
 application/vnd.kde.kivio			flw
 application/vnd.kde.kontour			kon
-application/vnd.kde.kpresenter			kpr kpt
-application/vnd.kde.kspread			ksp
-application/vnd.kde.kword			kwd kwt
+application/vnd.kde.kpresenter
+application/vnd.kde.kspread
+application/vnd.kde.kword
 application/vnd.kenameaapp			htke
 application/vnd.kidspiration			kia
 application/vnd.kinar				kne knp
@@ -642,9 +642,9 @@ application/x-gtar		gtar
 application/x-gzip		gz
 application/x-hdf		hdf
 application/x-javascript	js
-application/x-kchart		chrt
+application/x-kchart
 application/x-killustrator	kil
-application/x-koan		skp skd skt skm
+application/x-koan
 application/x-kpresenter	kpr kpt
 application/x-kspread		ksp
 application/x-kword		kwd kwt
@@ -683,10 +683,10 @@ application/x-tcl		tcl
 application/x-tex		tex
 application/x-texinfo		texinfo texi
 application/x-tgz tar.gz tgz
-application/x-troff		t tr roff
-application/x-troff-man		man
-application/x-troff-me		me
-application/x-troff-ms		ms
+application/x-troff
+application/x-troff-man
+application/x-troff-me
+application/x-troff-ms
 application/x-ustar		ustar
 application/x-wais-source	src
 application/x-windows-gadget	gadget
@@ -808,14 +808,14 @@ audio/vnd.qcelp
 audio/vnd.rhetorex.32kadpcm
 audio/vnd.sealedmedia.softseal.mpeg
 audio/vnd.vmx.cvsd
-audio/wav					wav
+audio/wav
 audio/x-aiff					aif aiff aifc
 audio/x-aiff			aif aiff aifc
 audio/x-mpegurl					m3u
 audio/x-mpegurl			m3u
 audio/x-ms-wax wax
 audio/x-ms-wma wma
-audio/x-pn-realaudio		ram rm
+audio/x-pn-realaudio		ram
 audio/x-pn-realaudio-plugin			rmp
 audio/x-realaudio		ra
 audio/x-wav			wav
@@ -824,7 +824,7 @@ chemical/x-cif					cif
 chemical/x-cmdf					cmdf
 chemical/x-cml					cml
 chemical/x-csml					csml
-chemical/x-pdb			pdb
+chemical/x-pdb
 chemical/x-xyz					xyz
 chemical/x-xyz			xyz
 image/bmp			bmp
@@ -927,13 +927,13 @@ text/dns
 text/enriched
 text/html			html htm
 text/parityfec
-text/plain			asc txt text conf def list log in
+text/plain			txt text conf def list log in
 text/prs.fallenstein.rst
 text/prs.lines.tag				dsc
 text/red
 text/rfc822-headers
 text/richtext			rtx
-text/rtf			rtf
+text/rtf
 text/rtp-enc-aescm128
 text/rtx
 text/sgml			sgml sgm
@@ -976,7 +976,7 @@ text/x-setext			etx
 text/x-uuencode					uu
 text/x-vcalendar				vcs
 text/x-vcard					vcf
-text/xml			xml xsl
+text/xml
 text/xml-external-parsed-entity
 video/3gpp					3gp
 video/3gpp-tt
@@ -1027,7 +1027,7 @@ video/vnd.sealedmedia.softseal.mov
 video/vnd.vivo					viv
 video/x-fli					fli
 video/x-flv			flv
-video/x-ms-asf asf asx
+video/x-ms-asf asx
 video/x-ms-wm					wm
 video/x-ms-wmv					wmv
 video/x-ms-wmx					wmx
