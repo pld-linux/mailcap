@@ -410,7 +410,6 @@ image/prs.pti
 image/svg+xml	svg
 image/svg+xml-compressed	svgz
 image/tiff			tiff tif
-image/x-icon			ico
 image/vnd.cns.inf2
 image/vnd.djvu			djvu djv
 image/vnd.dwg
@@ -426,6 +425,7 @@ image/vnd.svf
 image/vnd.wap.wbmp		wbmp
 image/vnd.xiff
 image/x-cmu-raster		ras
+image/x-icon			ico
 image/x-portable-anymap		pnm
 image/x-portable-bitmap		pbm
 image/x-portable-graymap	pgm
