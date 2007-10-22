@@ -335,7 +335,6 @@ application/x-netcdf		nc cdf
 application/x-ns-proxy-autoconfig	dat
 application/x-pkcs7-crl		crl
 application/x-rar-compressed	rar
-# This conflicts with audio/x-pn-realaudio-plugin, which is commented out below.
 application/x-rpm		rpm
 application/x-sh		sh
 application/x-shar		shar
@@ -393,7 +392,7 @@ audio/x-mpegurl			m3u
 audio/x-ms-wax wax
 audio/x-ms-wma wma
 audio/x-pn-realaudio		ram rm
-#audio/x-pn-realaudio-plugin	rpm
+audio/x-pn-realaudio-plugin
 audio/x-realaudio		ra
 audio/x-wav			wav
 chemical/x-pdb			pdb
