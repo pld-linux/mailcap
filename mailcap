@@ -6,13 +6,13 @@ audio/mod; /usr/bin/mikmod %s
 # play is apparently a security hole
 #audio/*; /usr/bin/play %s
 audio/*; /usr/bin/mplayer -vc null -vo null %s; test=[ -z "$DISPLAY" ]
-audio/*; /usr/bin/xterm -name mplayer -e /usr/bin/mplayer -vc null -vo null %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
+audio/*; /usr/X11R6/bin/xterm -name mplayer -e /usr/bin/mplayer -vc null -vo null %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
 
 video/*; /usr/bin/mplayer -vc null -vo null %s; test=[ -z "$DISPLAY" ]
-video/*; /usr/bin/xterm -name mplayer -e /usr/bin/mplayer %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
+video/*; /usr/X11R6/bin/xterm -name mplayer -e /usr/bin/mplayer %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
 
 video/mpeg; /usr/bin/mplayer -vc null -vo null %s; test=[ -z "$DISPLAY" ]
-video/mpeg; /usr/bin/xterm -name mplayer -e /usr/bin/mplayer %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
+video/mpeg; /usr/X11R6/bin/xterm -name mplayer -e /usr/bin/mplayer %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
 
 application/pdf; /usr/bin/xpdf %s; test=[ -n "$DISPLAY" ]
 application/pdf; /usr/bin/pdftotext -layout -nopgbrk %s -; copiousoutput
@@ -22,7 +22,7 @@ application/postscript; /usr/bin/ps2ascii %s; copiousoutput
 
 text/html; /usr/bin/htmlview %s; copiousoutput; test=[ -x /usr/bin/htmlview ]
 text/html; /usr/bin/elinks %s; nametemplate=%s.html; test=[ -z "$DISPLAY" ]
-text/html; /usr/bin/xterm -name xterm-elinks -e /usr/bin/elinks %s & /bin/sleep 1; nametemplate=%s.html; test=[ -n "$DISPLAY" ]
+text/html; /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks %s & /bin/sleep 1; nametemplate=%s.html; test=[ -n "$DISPLAY" ]
 text/html; /usr/bin/elinks -dump %s; copiousoutput
 
 #text/x-patch; /usr/bin/colordiff.pl < %s | less -r
@@ -40,7 +40,7 @@ application/vnd.sun.xml.writer; /usr/bin/oowriter %s; test=[ -n "$DISPLAY" -a -x
 
 application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	cd "$tmp"\; /usr/bin/soffice2html.pl %s\; \
-	{ /usr/bin/xterm -name xterm-elinks -e /usr/bin/elinks content.html\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks content.html\; \
 	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
 
 application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
@@ -57,7 +57,7 @@ application/msword; /usr/bin/oowriter %s; test=[ -n "$DISPLAY" -a -x /usr/bin/oo
 
 application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/wvHtml %s --targetdir="$tmp" page.html\; \
-	{ /usr/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
 
 application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
@@ -74,7 +74,7 @@ application/vnd.ms-excel; /usr/bin/oocalc %s; test=[ -n "$DISPLAY" -a -x /usr/bi
 
 application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
-	{ /usr/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
 
 application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
@@ -91,7 +91,7 @@ application/vnd.ms-powerpoint; /usr/bin/ooimpress %s; test=[ -n "$DISPLAY" -a -x
 
 application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/ppthtml %s > "$tmp/page.html"\; \
-	{ /usr/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
+	{ /usr/X11R6/bin/xterm -name xterm-elinks -e /usr/bin/elinks "$tmp/page.html"\; \
 	/bin/rm -rf "$tmp"\;} &; test=[ -n "$DISPLAY" ]
 
 application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
