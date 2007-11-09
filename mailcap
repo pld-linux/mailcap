@@ -20,6 +20,8 @@ application/pdf; /usr/bin/pdftotext -layout -nopgbrk %s -; copiousoutput
 application/postscript; /usr/bin/gv -safer %s; test=[ -n "$DISPLAY" ]
 application/postscript; /usr/bin/ps2ascii %s; copiousoutput
 
+application/x-dvi; /usr/bin/xdvi %s; test=[ -n "$DISPLAY" ]
+
 text/html; /usr/bin/htmlview %s; copiousoutput; test=[ -x /usr/bin/htmlview ]
 text/html; /usr/bin/elinks %s; nametemplate=%s.html; test=[ -z "$DISPLAY" ]
 text/html; /usr/bin/xterm -name xterm-elinks -e /usr/bin/elinks %s & /bin/sleep 1; nametemplate=%s.html; test=[ -n "$DISPLAY" ]
@@ -99,6 +101,11 @@ application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
 	/usr/bin/elinks -dump "$tmp"\; \
 	/bin/rm -f "$tmp"; copiousoutput
 
+application/x-bzip-compressed-tar; /bin/tar jtvvf %s; copiousoutput
+application/x-tar; /bin/tar tvvf %s; copiousoutput
+application/x-tgz; /bin/tar ztvvf %s; copiousoutput
 application/x-rar-compressed; /usr/bin/rar v -c- %s; copiousoutput
 application/x-zip-compressed; /usr/bin/unzip -v %s; copiousoutput
+application/zip; /usr/bin/unzip -v %s; copiousoutput
+application/x-rpm; /bin/rpm -qpilv %s; copiousoutput
 application/ms-tnef; /usr/bin/tnef -w %s; copiousoutput
