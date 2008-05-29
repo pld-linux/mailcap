@@ -8,8 +8,8 @@ Summary(pl.UTF-8):	Definicje rozszerzeń multimedialnych dla różnych programó
 Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
-Version:	2.1.14
-Release:	13
+Version:	2.2
+Release:	1
 License:	Public Domain
 Group:		Base
 Source0:	%{name}
