@@ -15,6 +15,27 @@ Group:		Base
 Source0:	%{name}
 Source1:	%{name}.4
 Source2:	mime.types
+Suggests:	colordiff
+Suggests:	elinks
+Suggests:	eog
+Suggests:	flash
+Suggests:	ghostscript
+Suggests:	gv
+Suggests:	metamail
+Suggests:	mikmod
+Suggests:	mplayer
+Suggests:	odt2txt
+Suggests:	qiv
+Suggests:	rar
+Suggests:	soffice2html
+Suggests:	tar
+Suggests:	unzip
+Suggests:	wv
+Suggests:	xdvi
+Suggests:	xlhtml
+Suggests:	xpdf
+Suggests:	xpdf-tools
+Suggests:	xterm
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
