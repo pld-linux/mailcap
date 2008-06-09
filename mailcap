@@ -104,7 +104,7 @@ application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
 application/x-bzip-compressed-tar; /bin/tar jtvvf %s; copiousoutput
 application/x-tar; /bin/tar tvvf %s; copiousoutput
 application/x-tgz; /bin/tar ztvvf %s; copiousoutput
-application/x-rar-compressed; /usr/bin/rar v -c- %s; copiousoutput
+application/x-rar-compressed; /usr/bin/unrar v -c- %s; copiousoutput
 application/x-zip-compressed; /usr/bin/unzip -v %s; copiousoutput
 application/zip; /usr/bin/unzip -v %s; copiousoutput
 application/x-rpm; /bin/rpm -qpilv %s; copiousoutput
