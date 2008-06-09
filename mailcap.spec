@@ -26,9 +26,9 @@ Suggests:	mikmod
 Suggests:	mplayer
 Suggests:	odt2txt
 Suggests:	qiv
-Suggests:	rar
 Suggests:	soffice2html
 Suggests:	tar
+Suggests:	unrar
 Suggests:	unzip
 Suggests:	wv
 Suggests:	xdvi
