@@ -16,6 +16,7 @@ Source0:	%{name}
 Source1:	%{name}.4
 Source2:	mime.types
 Suggests:	colordiff
+Suggests:	dvi2tty
 Suggests:	elinks
 Suggests:	eog
 Suggests:	flash
