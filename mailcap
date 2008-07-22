@@ -21,6 +21,7 @@ application/postscript; /usr/bin/gv -safer %s; test=[ -n "$DISPLAY" ]
 application/postscript; /usr/bin/ps2ascii %s; copiousoutput
 
 application/x-dvi; /usr/bin/xdvi %s; test=[ -n "$DISPLAY" ]
+application/x-dvi; /usr/bin/dvi2tty -w123 %s; copiousoutput
 
 text/html; /usr/bin/htmlview %s; copiousoutput; test=[ -x /usr/bin/htmlview ]
 text/html; /usr/bin/elinks %s; nametemplate=%s.html; test=[ -z "$DISPLAY" ]
