@@ -19,8 +19,8 @@ Suggests:	colordiff
 Suggests:	dvi2tty
 Suggests:	elinks
 Suggests:	eog
-Suggests:	gplflash
 Suggests:	ghostscript
+Suggests:	gplflash
 Suggests:	gv
 Suggests:	metamail
 Suggests:	mikmod
