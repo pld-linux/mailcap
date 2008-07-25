@@ -19,7 +19,7 @@ Suggests:	colordiff
 Suggests:	dvi2tty
 Suggests:	elinks
 Suggests:	eog
-Suggests:	flash
+Suggests:	gplflash
 Suggests:	ghostscript
 Suggests:	gv
 Suggests:	metamail
