@@ -9,12 +9,13 @@ Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários pr
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	2.2
-Release:	3
+Release:	4
 License:	Public Domain
 Group:		Base
 Source0:	%{name}
 Source1:	%{name}.4
 Source2:	mime.types
+BuildRequires:	rpm >= 4.4.9-56
 Suggests:	colordiff
 Suggests:	dvi2tty
 Suggests:	elinks
@@ -36,7 +37,11 @@ Suggests:	xdvi
 Suggests:	xlhtml
 Suggests:	xpdf
 Suggests:	xpdf-tools
+%if "%{pld_release}" == "ac"
+Suggests:	X11
+%else
 Suggests:	xterm
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
