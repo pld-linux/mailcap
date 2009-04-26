@@ -30,6 +30,7 @@ Suggests:	odt2txt
 Suggests:	qiv
 Suggests:	soffice2html
 Suggests:	tar
+Suggests:	tnef
 Suggests:	unrar
 Suggests:	unzip
 Suggests:	wv
