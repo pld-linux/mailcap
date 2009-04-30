@@ -8,13 +8,15 @@ Summary(pl.UTF-8):	Definicje rozszerzeń multimedialnych dla różnych programó
 Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
-Version:	2.2
-Release:	5
+Version:	2.3
+Release:	1
 License:	Public Domain
 Group:		Base
 Source0:	%{name}
 Source1:	%{name}.4
 Source2:	mime.types
+Source3:	run-%{name}
+Source4:	run-%{name}.man
 BuildRequires:	rpm >= 4.4.9-56
 Suggests:	colordiff
 Suggests:	dvi2tty
@@ -87,10 +89,12 @@ paketini kullanamalarına olanak sağlar (zgv kurulmuş olmalı).
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_mandir}/man4}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_mandir}/man{1,4},%{_bindir}}
 
 install %{SOURCE0} %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man4
+install %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/man1/run-%{name}.1
+install %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -98,4 +102,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
+%attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 %{_mandir}/man4/*
