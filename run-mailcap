@@ -479,7 +479,7 @@ foreach (@files) {
                     print STDERR " - filename contains shell meta-characters; aliased to '$tmplink'\n" if $debug;
                     $comm =~ s/([^%])%s/$1$tmplink/g;
                 } else {
-                    $comm =~ s/([^%])%s/$1$file/g;
+                    $comm =~ s/([^%])%s/$1"$file"/g;
                 }
             } else {
                 if ($comm =~ m/\|/) {
