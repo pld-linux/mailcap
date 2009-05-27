@@ -455,8 +455,6 @@ foreach (@files) {
                 $fail++;
                 next;
             }
-        } elsif ($action eq 'view' && $match =~ m/;\s*copiousoutput\s*($|;)/) {
-            $comm .= " | $0 --action=$action text/plain:-";
         }
 
         if ($file ne "-") {
