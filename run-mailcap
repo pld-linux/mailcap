@@ -134,9 +134,10 @@ sub TempFile {
 #   $tmpfile = POSIX::tmpnam($name);
 #   unlink($tmpfile);
 
-    $cmd  = "tempfile --mode=600";
-    $cmd .= " --prefix $head" if $head;
-    $cmd .= " --suffix $tail" if $tail;
+    $cmd  = "mktemp -t ";	# -t is depreciated, but --tmpdir would not be handled by older mktemp
+    $cmd .= "$head" if $head;
+    $cmd .= ".$tail" if $tail;
+    $cmd .= "XXXXXX";
 
     $tmpfile = `$cmd`;
     chomp($tmpfile);
