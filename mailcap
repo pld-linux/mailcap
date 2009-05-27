@@ -1,5 +1,9 @@
 image/*; /usr/bin/eog %s; test=[ -n "$DISPLAY" -a -x /usr/bin/eog ]
 image/*; /usr/bin/qiv %s; test=[ -n "$DISPLAY" ]
+image/*; /usr/bin/asciiview %s; test=[ -z "$DISPLAY" ]
+image/*; /usr/bin/identify -verbose %s; copiousoutput
+
+audio/mpeg; /usr/bin/id3v2 -l %s; copiousoutput
 
 audio/mod; /usr/bin/mikmod %s
 

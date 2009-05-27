@@ -18,6 +18,9 @@ Source2:	mime.types
 Source3:	run-%{name}
 Source4:	run-%{name}.man
 BuildRequires:	rpm >= 4.4.9-56
+Suggests:	ImageMagick-coder-jpeg
+Suggests:	ImageMagick-coder-png
+Suggests:	aview
 Suggests:	colordiff
 Suggests:	dvi2tty
 Suggests:	elinks
@@ -25,6 +28,7 @@ Suggests:	eog
 Suggests:	ghostscript
 Suggests:	gplflash
 Suggests:	gv
+Suggests:	id3v2
 Suggests:	metamail
 Suggests:	mikmod
 Suggests:	mplayer
