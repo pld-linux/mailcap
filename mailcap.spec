@@ -29,6 +29,7 @@ Suggests:	ghostscript
 Suggests:	gplflash
 Suggests:	gv
 Suggests:	id3v2
+Suggests:	libcaca-img
 Suggests:	metamail
 Suggests:	mikmod
 Suggests:	mplayer
