@@ -116,4 +116,6 @@ application/x-rar-compressed; /usr/bin/unrar v -c- %s; copiousoutput
 application/x-zip-compressed; /usr/bin/unzip -v %s; copiousoutput
 application/zip; /usr/bin/unzip -v %s; copiousoutput
 application/x-rpm; /bin/rpm -qpilv %s; copiousoutput
-application/ms-tnef; /usr/bin/tnef -w %s; copiousoutput
+application/ms-tnef; /usr/bin/tnef -vt %s; copiousoutput
+application/pgp-encrypted; /usr/bin/gpg -vv %s 2>&1; copiousoutput
+application/pgp-signature; /usr/bin/gpg -vv %s 2>&1; copiousoutput
