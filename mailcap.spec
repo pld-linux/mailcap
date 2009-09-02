@@ -9,7 +9,7 @@ Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários pr
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	2.3
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Base
 Source0:	%{name}
@@ -34,6 +34,7 @@ Suggests:	metamail
 Suggests:	mikmod
 Suggests:	mplayer
 Suggests:	odt2txt
+Suggests:	perl-base
 Suggests:	qiv
 Suggests:	soffice2html
 Suggests:	tar
@@ -53,6 +54,8 @@ Suggests:	xterm
 Conflicts:	rpm < 4.4.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreqfiles	%{_bindir}/run-%{name}
 
 %description
 The mailcap file is used by the metamail program. Metamail reads the
