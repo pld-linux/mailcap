@@ -94,22 +94,27 @@ paketini kullanamalarına olanak sağlar (zgv kurulmuş olmalı).
 
 %prep
 %setup -q -c -T
+cp -a %{SOURCE0} mailcap
+
+%if "%{pld_release}" == "ac"
+%{__sed} -i -e 's,/usr/bin/xterm,/usr/X11R6/bin/xterm,g' mailcap
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_mandir}/man{1,4},%{_bindir}}
-
-install %{SOURCE0} %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man4
-install %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/man1/run-%{name}.1
-install %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}
+cp -a mailcap %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}
+cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man4
+cp -a %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/man1/run-%{name}.1
+install -p %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
-%{_mandir}/man4/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/mailcap
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/mime.types
+%attr(755,root,root) %{_bindir}/run-mailcap
+%{_mandir}/man1/run-mailcap.1*
+%{_mandir}/man4/mailcap.4*
