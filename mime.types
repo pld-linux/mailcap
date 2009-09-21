@@ -641,7 +641,7 @@ application/x-futuresplash	spl
 application/x-gtar		gtar
 application/x-gzip		gz
 application/x-hdf		hdf
-application/x-javascript	js
+application/x-javascript
 application/x-kchart
 application/x-killustrator	kil
 application/x-koan
@@ -926,6 +926,7 @@ text/directory
 text/dns
 text/enriched
 text/html			html htm
+text/javascript			js
 text/parityfec
 text/plain			txt text conf def list log in
 text/prs.fallenstein.rst
