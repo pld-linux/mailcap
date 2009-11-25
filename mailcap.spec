@@ -1,5 +1,8 @@
 # TODO
 # - use IANA as source http://www.iana.org/assignments/media-types/ ?
+%bcond_without	tests
+#
+%define	fcver	2.1.31
 Summary:	Defines multimedia helper applications for various programs
 Summary(de.UTF-8):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
 Summary(es.UTF-8):	Define aplicaciones auxiliares multimedia para varios programas
@@ -9,12 +12,13 @@ Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários pr
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	2.3
-Release:	2
+Release:	3
 License:	Public Domain
 Group:		Base
-Source0:	%{name}
-Source1:	%{name}.4
-Source2:	mime.types
+Source0:	https://fedorahosted.org/released/mailcap/mailcap-%{fcver}.tar.gz
+# Source0-md5:	54f487f4038b703a3e87c2b95334857d
+Source1:	%{name}
+Source2:	%{name}.4
 Source3:	run-%{name}
 Source4:	run-%{name}.man
 BuildRequires:	rpm >= 4.4.9-56
@@ -52,6 +56,7 @@ Suggests:	X11
 Suggests:	xterm
 %endif
 Conflicts:	rpm < 4.4.9
+%{?with_tests:BuildRequires:perl-base}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -93,18 +98,22 @@ lynx gibi programların resim göstermek için otomatik olarak zgv
 paketini kullanamalarına olanak sağlar (zgv kurulmuş olmalı).
 
 %prep
-%setup -q -c -T
-cp -a %{SOURCE0} mailcap
+%setup -q -n %{name}-%{fcver}
+cp -a %{SOURCE1} mailcap
 
 %if "%{pld_release}" == "ac"
 %{__sed} -i -e 's,/usr/bin/xterm,/usr/X11R6/bin/xterm,g' mailcap
 %endif
 
+%if %{with tests}
+%{__make} check
+%endif
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_mandir}/man{1,4},%{_bindir}}
-cp -a mailcap %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}
-cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man4
+cp -a mailcap mime.types $RPM_BUILD_ROOT%{_sysconfdir}
+cp -a %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/man4
 cp -a %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/man1/run-%{name}.1
 install -p %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}
 
