@@ -11,6 +11,8 @@
 
 
 $debug=0;
+$norun=0;
+$pager=0;
 $etcmimetyp="/etc/mime.types";
 $shrmimetyp="/usr/share/etc/mime.types";
 $locmimetyp="/usr/local/etc/mime.types";
@@ -39,6 +41,8 @@ sub Usage {
     print STDERR "Options:\n";
     print STDERR "  action        specify what action to do on these files (default=view)\n";
     print STDERR "  debug         be verbose about what's going on\n";
+    print STDERR "  pager         ignore any \"copiousoutput\" directives and use a \"pager\"\n";
+    print STDERR "  norun         just print but don't execute the command (useful with --debug)\n";
     print STDERR "\n";
     print STDERR "Mime-Type:\n";
     print STDERR "  any standard mime type designation in the form <class>/<subtype> -- if\n";
@@ -357,6 +361,7 @@ foreach (@ARGV) {
 unless ($action) {
        if ($0 =~ m!(^|/)view$!)     { $action="view";   }
     elsif ($0 =~ m!(^|/)see$!)      { $action="view";   }
+    elsif ($0 =~ m!(^|/)cat$!)      { $action="cat";    }
     elsif ($0 =~ m!(^|/)edit$!)     { $action="edit";   }
     elsif ($0 =~ m!(^|/)change$!)   { $action="edit";   }
     elsif ($0 =~ m!(^|/)compose$!)  { $action="compose";}
@@ -420,20 +425,39 @@ foreach (@files) {
         $_ = "\Q$1\E"; s/\\\*/\.\*/g;
         push @matches,$entry if ($type =~ m!^$_$!i);
     }
-    @matches = grep(/\Q$action\E=/,@matches) unless $action eq "view";
+    @matches = grep(/\Q$action\E=/,@matches) unless ($action eq "view" || $action eq "cat");
 
     my $done=0;
     my $fail=0;
     foreach $match (@matches) {
         my $comm;
         print STDERR " - checking mailcap entry \"$match\"\n" if $debug;
-        if ($action eq "view") {
+        if ($action eq "view" || $action eq "cat") {
             ($comm) = ($match =~ m/^.*?;\s*(.*?)\s*($|;)/);
         } else {
             ($comm) = ($match =~ m/\Q$action\E=(.*?)\s*($|;)/);
         }
         next if (!$comm || $comm =~ m!(^|/)false$!i);
         print STDERR " - program to execute: $comm\n" if $debug;
+
+	if ($action eq 'cat' && $match !~ m/;\s*copiousoutput\s*($|;)/) {
+	    print STDERR " - \"copiousoutput\" is required for \"cat\" action\n" if $debug;
+	    $fail++;
+	    next;
+	}
+
+        my($tmpfile,$tmplink);
+        if ($action ne 'print' && $match =~ m/;\s*needsterminal\s*($|;)/ && ! -t STDOUT) {
+            if ($ENV{DISPLAY}) {
+                $comm = "$xtermprgrm -T '$file ($type)' -e $0 --action=$action '${type}:%s'";
+            } else {
+                print STDERR " - no terminal available for rule (needsterminal)\n" if $debug;
+                $fail++;
+                next;
+            }
+        } elsif ($action eq 'view' && $pager && $match =~ m/;\s*copiousoutput\s*($|;)/ && $type ne 'text/plain') {
+            $comm .= " | $0 --action=$action text/plain:-";
+        }
 
         if ($match =~ m/;\s*test=(.*?)\s*($|;)/) {
             my $test;
@@ -442,17 +466,6 @@ foreach (@files) {
             $test >>= 8;
             print STDERR " (result=$test=",($test!=0?"false":"true"),")\n" if $debug;
             if ($test) {
-                $fail++;
-                next;
-            }
-        }
-
-        my($tmpfile,$tmplink);
-        if ($action ne 'print' && $match =~ m/;\s*needsterminal\s*($|;)/ && ! -t STDOUT) {
-            if ($ENV{DISPLAY}) {
-                $comm = "$xtermprgrm -T '$file ($type)' -e $0 --action=$action '${type}:%s'";
-            } else {
-                print STDERR " - no terminal available for rule (needsterminal)\n" if $debug;
                 $fail++;
                 next;
             }
@@ -508,8 +521,13 @@ foreach (@files) {
         $comm =~ s!$quotedprct!%!go;
 
         print STDERR " - executing: $comm\n" if $debug;
-        $res = system $comm;
-        $res = int($res/256);
+	if ($norun) {
+	    print $comm,"\n";
+	    $res = 0;
+	} else {
+	    $res = system $comm;
+	    $res = int($res/256);
+	}
         if ($res != 0) {
             print STDERR "Warning: program returned non-zero exit code \#$res\n";
             $retcode = $res;

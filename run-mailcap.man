@@ -9,7 +9,7 @@ run-mailcap, view, see, edit, compose, print \- execute programs via entries in 
 file
 .SH SYNOPSIS
 .B run-mailcap
-\-\-action=ACTION [\-\-debug]
+\-\-action=ACTION [\-\-option[=value]]
 [MIME-TYPE:[ENCODING:]]FILE [...]
 
 The
@@ -57,6 +57,8 @@ All options are in the form --<opt>=<value>.
 .BI \-\-action=<action>
 Performs the specified action on the files.  Valid actions are
 .IR view ,
+.IR cat
+(like view but never paged) ,
 .IR compose ,
 .IR composetyped ,
 .I edit
@@ -65,9 +67,14 @@ and
 If no action is specified, the action will be determined by how the
 program was called.
 .TP
-.BI \-\-debug=<value>
-Turns on extra information to find out what is happening.  Any value
-other than zero (0) will turn on debugging output.
+.BI \-\-debug
+Turns on extra information to find out what is happening.
+.TP
+.BI \-\-nopager
+Ignores any "copiousoutput" directive and sends output to STDOUT.
+.TP
+.BI \-\-norun
+Displays the found command without actually executing it.
 .SH "SEE ALSO"
 .BR update-mime "(8)"
 .SH AUTHOR

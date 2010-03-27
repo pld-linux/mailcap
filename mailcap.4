@@ -1,4 +1,5 @@
-.TH MAILCAP 4 "Release 2" "Bellcore Prototype"
+.\" Hey, Emacs!  This is an -*- nroff -*- source file.
+.TH MAILCAP 5 "Release 2" "Bellcore Prototype"
 .SH NAME
 mailcap - metamail capabilities file
 .SH DESCRIPTION
@@ -20,13 +21,9 @@ text/plain; cat %s; copiousoutput
 
 can be used to indicate that the output of the 'cat' command may be voluminous, requiring either a scrolling window, a pager, or some other appropriate coping mechanism.
 
-The "type" field (text/plain, in the above example) is simply any legal content type name, as defined by RFC 822.  In practice, this is almost any string.  It is the string that will be matched against the "Content-type" header (or the value passed in with -c) to decide if this is the mailcap entry that matches the current message.  Additionally, the type field may specify a subtype (e.g. "text/ISO-8859-1") or a wildcard to match all subtypes (e.g. "image/*").
+The "type" field (text/plain, in the above example) is simply any legal content type name, as defined by informational RFC 1524.  In practice, this is almost any string.  It is the string that will be matched against the "Content-type" header (or the value passed in with -c) to decide if this is the mailcap entry that matches the current message.  Additionally, the type field may specify a subtype (e.g. "text/ISO-8859-1") or a wildcard to match all subtypes (e.g. "image/*").
 
-The "command" field is any UNIX command ("cat %s" in the above example), and is used to specify the interpreter for the given type of message.  It will be passed to the shell via the system(3) facility.  Semicolons and backslashes within the command must be quoted with backslashes.  If the command contains "%s", those two characters will be replaced by the name of a file that contains the body of the message. If it contains "%t', those two characters will be replaced by the content-type field, including the subtype, if any.  (That is, if the content-type was "image/pbm; opt1=something-else", then "%t" would be replaced by "image/pbm".)   If the command field contains  "%{" followed by a parameter name and a closing "}", then all those characters will be replaced by the value of the named parameter, if any, from the Content-type header.   Thus, in the previous example, "%{opt1}" will be replaced by "something-else".  Finally, if the command contains "\%", those two characters will be replaced by a single % ch
-
-
-
-aracter.  (In fact, the backslash can be used to quote any character, including itself.)
+The "command" field is any UNIX command ("cat %s" in the above example), and is used to specify the interpreter for the given type of message.  It will be passed to the shell via the system(3) facility.  Semicolons and backslashes within the command must be quoted with backslashes.  If the command contains "%s", those two characters will be replaced by the name of a file that contains the body of the message. If it contains "%t", those two characters will be replaced by the content-type field, including the subtype, if any.  (That is, if the content-type was "image/pbm; opt1=something-else", then "%t" would be replaced by "image/pbm".)   If the command field contains  "%{" followed by a parameter name and a closing "}", then all those characters will be replaced by the value of the named parameter, if any, from the Content-type header.   Thus, in the previous example, "%{opt1}" will be replaced by "something-else".  Finally, if the command contains "\\%", those two characters will be replaced by a single % character.  (In fact, the backslash can be used to quote any character, including itself.)
 
 If no "%s" appears in the command field, then instead of placing the message body in a temporary file, metamail will pass the body to the command on the standard input.  This is helpful in saving /tmp file space, but can be problematic for window-oriented applications under some window systems such as MGR.
 
@@ -53,9 +50,10 @@ This flag should be given whenever the interpreter is capable of producing more 
 .SH BUILT-IN CONTENT-TYPE SUPPORT
 The metamail program has built-in support for a few key content-types.  In particular, it supports the text type, the multipart and multipart/alternative type, and the message/rfc822 types.  This support is incomplete for many subtypes -- for example, it only supports US-ASCII text in general.  This kind of built-in support can be OVERRIDDEN by an entry in any mailcap file on the user's search path.  Metamail also has rudimentary built-in support for types that are totally unrecognized -- i.e. for which no mailcap entry or built-in handler exists.  For such unrecognized types, metamail will write a file with a "clean" copy of the data -- i.e. a copy in which all mail headers have been removed, and in which any 7-bit transport encoding has been decoded.
 .SH FILES
-$HOME/.mailcap:/etc/mailcap:/usr/etc/mailcap:/usr/local/etc/mailcap -- default path for mailcap files.
+$HOME/.mailcap:/etc/mailcap:/usr/share/etc/mailcap:/usr/local/etc/mailcap -- default path for mailcap files.
 .SH SEE ALSO
-metamail(1)
+.BR run-mailcap "(1)",
+.BR update-mime-database "(1)"
 .SH COPYRIGHT
 Copyright (c) 1991 Bell Communications Research, Inc. (Bellcore)
 
