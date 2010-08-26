@@ -1,8 +1,8 @@
 # TODO
 # - use IANA as source http://www.iana.org/assignments/media-types/ ?
 %bcond_without	tests
-#
-%define	fcver	2.1.31
+
+%define		fcver	2.1.31
 Summary:	Defines multimedia helper applications for various programs
 Summary(de.UTF-8):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
 Summary(es.UTF-8):	Define aplicaciones auxiliares multimedia para varios programas
@@ -15,12 +15,13 @@ Version:	2.3
 Release:	4
 License:	Public Domain
 Group:		Base
-Source0:	https://fedorahosted.org/released/mailcap/mailcap-%{fcver}.tar.gz
+Source0:	https://fedorahosted.org/released/mailcap/%{name}-%{fcver}.tar.gz
 # Source0-md5:	54f487f4038b703a3e87c2b95334857d
 Source1:	%{name}
 Source2:	%{name}.4
 Source3:	run-%{name}
 Source4:	run-%{name}.man
+Patch0:		mime.types.patch
 BuildRequires:	rpm >= 4.4.9-56
 Suggests:	ImageMagick-coder-jpeg
 Suggests:	ImageMagick-coder-png
@@ -55,8 +56,8 @@ Suggests:	X11
 %else
 Suggests:	xterm
 %endif
-Conflicts:	rpm < 4.4.9
 %{?with_tests:BuildRequires:perl-base}
+Conflicts:	rpm < 4.4.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -99,6 +100,7 @@ paketini kullanamalarına olanak sağlar (zgv kurulmuş olmalı).
 
 %prep
 %setup -q -n %{name}-%{fcver}
+%patch0 -p1
 cp -a %{SOURCE1} mailcap
 
 %if "%{pld_release}" == "ac"

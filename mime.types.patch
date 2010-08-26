@@ -1,0 +1,10 @@
+--- mailcap-2.1.31/mime.types~	2009-11-17 23:13:33.000000000 +0200
++++ mailcap-2.1.31/mime.types	2010-08-26 19:28:52.629404880 +0300
+@@ -843,6 +843,7 @@
+ application/xop+xml				xop
+ application/xslt+xml				xsl xslt
+ application/xv+xml				mxml xhvml xvml xvm
++application/x-windows-gadget	gadget
+ application/zip					zip
+ audio/32kadpcm					726
+ # 3gp, 3gpp: video/3gpp
