@@ -1,5 +1,5 @@
---- mailcap-2.1.31/mime.types	2010-08-26 19:28:52.629404880 +0300
-+++ mailcap-2.1.31/mime.types	2010-08-26 19:32:31.572508121 +0300
+--- mailcap-2.1.31/mime.types	2010-08-26 19:32:31.572508121 +0300
++++ mailcap-2.1.31/mime.types	2010-08-26 19:34:50.779161843 +0300
 @@ -843,6 +843,7 @@
  application/xop+xml				xop
  application/xslt+xml				xsl xslt
@@ -25,3 +25,11 @@
  message/CPIM
  message/delivery-status
  message/disposition-notification
+@@ -1257,6 +1259,7 @@
+ application/x-troff-ms				ms
+ application/x-ustar				ustar
+ application/x-wais-source			src
++application/x-x509-ca-cert			crt
+ application/x-xz				xz
+ audio/midi					mid midi kar
+ audio/x-aiff					aif aiff aifc
