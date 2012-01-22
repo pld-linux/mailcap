@@ -12,7 +12,7 @@ Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários pr
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	2.3
-Release:	5
+Release:	6
 License:	Public Domain
 Group:		Base
 Source0:	https://fedorahosted.org/released/mailcap/%{name}-%{fcver}.tar.gz
@@ -114,9 +114,9 @@ cp -a %{SOURCE1} mailcap
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_mandir}/man{1,4},%{_bindir}}
-cp -a mailcap mime.types $RPM_BUILD_ROOT%{_sysconfdir}
-cp -a %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/man4
-cp -a %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/man1/run-%{name}.1
+cp -p mailcap mime.types $RPM_BUILD_ROOT%{_sysconfdir}
+cp -p %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/man4
+cp -p %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/man1/run-%{name}.1
 install -p %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}
 
 %clean

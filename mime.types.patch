@@ -1,5 +1,5 @@
---- mailcap-2.1.31/mime.types	2010-08-26 19:34:50.779161843 +0300
-+++ mailcap-2.1.31/mime.types	2010-08-26 19:40:09.069126869 +0300
+--- mailcap-2.1.31/mime.types	2010-08-26 19:40:09.069126869 +0300
++++ mailcap-2.1.31/mime.types	2012-01-22 21:57:54.126209709 +0200
 @@ -481,7 +481,7 @@
  application/vnd.ms-ims				ims
  application/vnd.ms-lrm				lrm
@@ -18,7 +18,15 @@
  application/zip					zip
  audio/32kadpcm					726
  # 3gp, 3gpp: video/3gpp
-@@ -1006,7 +1008,7 @@
+@@ -979,6 +981,7 @@
+ audio/vnd.vmx.cvsd
+ audio/vorbis
+ audio/vorbis-config
++audio/webm					weba
+ image/cgm
+ image/fits					fits fit fts
+ image/g3fax
+@@ -1006,7 +1009,7 @@
  image/vnd.fujixerox.edmics-mmr			mmr
  image/vnd.fujixerox.edmics-rlc			rlc
  image/vnd.globalgraphics.pgb			pgb
@@ -27,7 +35,7 @@
  image/vnd.mix
  image/vnd.ms-modi				mdi
  image/vnd.net-fpx
-@@ -1017,6 +1019,7 @@
+@@ -1017,6 +1020,7 @@
  image/vnd.svf
  image/vnd.wap.wbmp				wbmp
  image/vnd.xiff					xif
@@ -35,7 +43,7 @@
  message/CPIM
  message/delivery-status
  message/disposition-notification
-@@ -1257,6 +1260,7 @@
+@@ -1257,6 +1261,7 @@
  application/x-troff-ms				ms
  application/x-ustar				ustar
  application/x-wais-source			src
@@ -43,3 +51,11 @@
  application/x-xz				xz
  audio/midi					mid midi kar
  audio/x-aiff					aif aiff aifc
+@@ -1286,6 +1291,7 @@
+ text/x-pod					pod
+ text/x-setext					etx
+ text/x-vcard					vcf
++video/webm					webm
+ video/x-flv					flv
+ video/x-ms-asf					asx
+ video/x-ms-wm					wm
