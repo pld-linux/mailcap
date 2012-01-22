@@ -1,24 +1,24 @@
---- mailcap-2.1.31/mime.types	2010-08-26 19:40:09.069126869 +0300
-+++ mailcap-2.1.31/mime.types	2012-01-22 21:57:54.126209709 +0200
-@@ -481,7 +481,7 @@
- application/vnd.ms-ims				ims
- application/vnd.ms-lrm				lrm
+--- mailcap-2.1.38/mime.types~	2011-08-16 12:03:33.000000000 +0300
++++ mailcap-2.1.38/mime.types	2012-01-22 22:12:34.152935778 +0200
+@@ -568,7 +568,7 @@
+ application/vnd.ms-office.activeX+xml
+ application/vnd.ms-officetheme			thmx
  application/vnd.ms-playready.initiator+xml
 -application/vnd.ms-powerpoint			ppt
 +application/vnd.ms-powerpoint			ppt pps
- application/vnd.ms-project			mpp
- application/vnd.ms-tnef				tnef tnf
- application/vnd.ms-wmdrm.lic-chlg-req
-@@ -843,6 +843,8 @@
- application/xop+xml				xop
- application/xslt+xml				xsl xslt
- application/xv+xml				mxml xhvml xvml xvm
+ application/vnd.ms-powerpoint.addin.macroEnabled.12	ppam
+ application/vnd.ms-powerpoint.presentation.macroEnabled.12	pptm
+ application/vnd.ms-powerpoint.slide.macroEnabled.12	sldm
+@@ -990,6 +990,8 @@
+ application/yang				yang
+ application/yin+xml				yin
+ application/zip					zip
 +application/x-rar-compressed			rar
 +application/x-windows-gadget			gadget
- application/zip					zip
+ audio/1d-interleaved-parityfec
  audio/32kadpcm					726
  # 3gp, 3gpp: video/3gpp
-@@ -979,6 +981,7 @@
+@@ -1133,6 +1135,7 @@
  audio/vnd.vmx.cvsd
  audio/vorbis
  audio/vorbis-config
@@ -26,7 +26,7 @@
  image/cgm
  image/fits					fits fit fts
  image/g3fax
-@@ -1006,7 +1009,7 @@
+@@ -1165,7 +1168,7 @@
  image/vnd.fujixerox.edmics-mmr			mmr
  image/vnd.fujixerox.edmics-rlc			rlc
  image/vnd.globalgraphics.pgb			pgb
@@ -35,7 +35,7 @@
  image/vnd.mix
  image/vnd.ms-modi				mdi
  image/vnd.net-fpx
-@@ -1017,6 +1020,7 @@
+@@ -1176,6 +1179,7 @@
  image/vnd.svf
  image/vnd.wap.wbmp				wbmp
  image/vnd.xiff					xif
@@ -43,19 +43,11 @@
  message/CPIM
  message/delivery-status
  message/disposition-notification
-@@ -1257,6 +1261,7 @@
+@@ -1420,6 +1424,7 @@
  application/x-troff-ms				ms
  application/x-ustar				ustar
  application/x-wais-source			src
 +application/x-x509-ca-cert			crt
+ application/x-xpinstall				xpi
+ application/x-xspf+xml				xspf
  application/x-xz				xz
- audio/midi					mid midi kar
- audio/x-aiff					aif aiff aifc
-@@ -1286,6 +1291,7 @@
- text/x-pod					pod
- text/x-setext					etx
- text/x-vcard					vcf
-+video/webm					webm
- video/x-flv					flv
- video/x-ms-asf					asx
- video/x-ms-wm					wm
