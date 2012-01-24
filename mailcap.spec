@@ -1,7 +1,10 @@
 # TODO
 # - use IANA as source http://www.iana.org/assignments/media-types/ ?
-%bcond_without	tests
-
+#   nb. fedorahosted mailcap project is synchronized with IANA
+#
+# Conditional build:
+%bcond_without	tests	# do not perform "make check"
+#
 %define		fcver	2.1.38
 Summary:	Defines multimedia helper applications for various programs
 Summary(de.UTF-8):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
@@ -22,6 +25,7 @@ Source2:	%{name}.4
 Source3:	run-%{name}
 Source4:	run-%{name}.man
 Patch0:		mime.types.patch
+URL:		http://git.fedorahosted.org/git/?p=mailcap.git
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
