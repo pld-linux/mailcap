@@ -1,5 +1,6 @@
---- mailcap-2.1.38/mime.types~	2011-08-16 12:03:33.000000000 +0300
-+++ mailcap-2.1.38/mime.types	2012-01-22 22:12:34.152935778 +0200
+diff -urN mailcap-2.1.38.org/mime.types mailcap-2.1.38/mime.types
+--- mailcap-2.1.38.org/mime.types	2011-08-16 11:03:33.000000000 +0200
++++ mailcap-2.1.38/mime.types	2013-01-22 14:16:49.790438384 +0100
 @@ -568,7 +568,7 @@
  application/vnd.ms-office.activeX+xml
  application/vnd.ms-officetheme			thmx
@@ -43,7 +44,15 @@
  message/CPIM
  message/delivery-status
  message/disposition-notification
-@@ -1420,6 +1424,7 @@
+@@ -1280,6 +1284,7 @@
+ text/vnd.wap.sl					sl
+ text/vnd.wap.wml				wml
+ text/vnd.wap.wmlscript				wmls
++text/x-component				htc
+ text/xml					xml xsd rng
+ text/xml-external-parsed-entity			ent
+ video/1d-interleaved-parityfec
+@@ -1420,6 +1425,7 @@
  application/x-troff-ms				ms
  application/x-ustar				ustar
  application/x-wais-source			src
