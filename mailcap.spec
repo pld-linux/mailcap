@@ -113,6 +113,7 @@ cp -a %{SOURCE1} mailcap
 %{__sed} -i -e 's,/usr/bin/xterm,/usr/X11R6/bin/xterm,g' mailcap
 %endif
 
+%build
 %if %{with tests}
 %{__make} check
 %endif
