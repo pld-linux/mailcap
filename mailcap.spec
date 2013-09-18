@@ -4,8 +4,9 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make check"
-#
-%define		fcver	2.1.38
+
+%define		fcver	2.1.41
+%define		ver		2.3.%(v=%{fcver}; echo ${v#2.1.})
 Summary:	Defines multimedia helper applications for various programs
 Summary(de.UTF-8):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
 Summary(es.UTF-8):	Define aplicaciones auxiliares multimedia para varios programas
@@ -14,12 +15,12 @@ Summary(pl.UTF-8):	Definicje rozszerzeń multimedialnych dla różnych programó
 Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários programas
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
-Version:	2.3
-Release:	7
+Version:	%{ver}
+Release:	1
 License:	Public Domain
 Group:		Base
 Source0:	https://fedorahosted.org/released/mailcap/%{name}-%{fcver}.tar.xz
-# Source0-md5:	a7b46a45e48e77ef44b50dcd95c28f20
+# Source0-md5:	9163cd0688dc5dd6cdd2ecb55e628692
 Source1:	%{name}
 Source2:	%{name}.4
 Source3:	run-%{name}

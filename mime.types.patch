@@ -1,32 +1,14 @@
-diff -urN mailcap-2.1.38.org/mime.types mailcap-2.1.38/mime.types
---- mailcap-2.1.38.org/mime.types	2011-08-16 11:03:33.000000000 +0200
-+++ mailcap-2.1.38/mime.types	2013-01-22 14:16:49.790438384 +0100
-@@ -568,7 +568,7 @@
- application/vnd.ms-office.activeX+xml
- application/vnd.ms-officetheme			thmx
- application/vnd.ms-playready.initiator+xml
--application/vnd.ms-powerpoint			ppt
-+application/vnd.ms-powerpoint			ppt pps
- application/vnd.ms-powerpoint.addin.macroEnabled.12	ppam
- application/vnd.ms-powerpoint.presentation.macroEnabled.12	pptm
- application/vnd.ms-powerpoint.slide.macroEnabled.12	sldm
-@@ -990,6 +990,8 @@
- application/yang				yang
- application/yin+xml				yin
- application/zip					zip
+--- mailcap-2.1.40/mime.types~	2013-09-18 18:33:48.000000000 +0300
++++ mailcap-2.1.40/mime.types	2013-09-18 18:34:43.827318330 +0300
+@@ -1011,6 +1011,8 @@
+ application/xcon-conference-info-diff+xml
+ application/xcon-conference-info+xml
+ application/xenc+xml
 +application/x-rar-compressed			rar
 +application/x-windows-gadget			gadget
- audio/1d-interleaved-parityfec
- audio/32kadpcm					726
- # 3gp, 3gpp: video/3gpp
-@@ -1133,6 +1135,7 @@
- audio/vnd.vmx.cvsd
- audio/vorbis
- audio/vorbis-config
-+audio/webm					weba
- image/cgm
- image/fits					fits fit fts
- image/g3fax
+ application/xhtml+xml				xhtml xhtm xht
+ # application/xhtml-voice+xml obsoleted by application/xv+xml
+ # xml, xsd, rng: text/xml
 @@ -1165,7 +1168,7 @@
  image/vnd.fujixerox.edmics-mmr			mmr
  image/vnd.fujixerox.edmics-rlc			rlc
@@ -60,3 +42,12 @@ diff -urN mailcap-2.1.38.org/mime.types mailcap-2.1.38/mime.types
  application/x-xpinstall				xpi
  application/x-xspf+xml				xspf
  application/x-xz				xz
+@@ -1542,7 +1542,7 @@
+ text/html-sandboxed				sandboxed
+ text/x-pod					pod
+ text/x-setext					etx
+-video/webm					webm
++video/webm					webm weba
+ video/x-annodex					axv
+ video/x-flv					flv
+ video/x-javafx					fxm
