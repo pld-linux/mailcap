@@ -52,6 +52,7 @@ Suggests:	soffice2html
 Suggests:	tar
 Suggests:	tnef
 Suggests:	unrar
+Suggests:	unrtf
 Suggests:	unzip
 Suggests:	wv
 Suggests:	xdvi

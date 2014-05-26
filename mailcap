@@ -1,7 +1,7 @@
 image/*; /usr/bin/eog %s; test=[ -n "$DISPLAY" -a -x /usr/bin/eog ]
 image/*; /usr/bin/qiv %s; test=[ -n "$DISPLAY" ]
-image/*; /usr/bin/asciiview %s; test=[ -z "$DISPLAY" ]
-image/*; /usr/bin/cacaview %s; test=[ -z "$DISPLAY" ]
+image/*; /usr/bin/asciiview %s; test=[ -z "$DISPLAY" ]; needsterminal
+image/*; /usr/bin/cacaview %s; test=[ -z "$DISPLAY" ]; needsterminal
 image/*; /usr/bin/identify -verbose %s; copiousoutput
 
 audio/mpeg; /usr/bin/id3v2 -l %s; copiousoutput
@@ -31,11 +31,13 @@ application/x-dvi; /usr/bin/dvi2tty -w123 %s; copiousoutput
 text/html; /usr/bin/htmlview %s; copiousoutput; test=[ -x /usr/bin/htmlview ]
 text/html; /usr/bin/elinks %s; nametemplate=%s.html; test=[ -z "$DISPLAY" ]
 text/html; /usr/bin/xterm -name xterm-elinks -e /usr/bin/elinks %s & /bin/sleep 1; nametemplate=%s.html; test=[ -n "$DISPLAY" ]
-text/html; /usr/bin/elinks -dump %s; copiousoutput
+text/html; /usr/bin/elinks -dump -eval 'set document.codepage.assume = "%{charset}"' %s; copiousoutput
 
 #text/x-patch; /usr/bin/colordiff.pl < %s | less -r
 
 application/x-shockwave-flash; /usr/bin/swfplayer %s & sleep 2; test=[ -n "$DISPLAY" ]
+
+application/rtf; /usr/bin/unrtf --nopict --text --quiet %s; copiousoutput
 
 application/vnd.oasis.opendocument.presentation; odt2txt %s; copiousoutput; test=[ -z "$DISPLAY" ]
 application/vnd.oasis.opendocument.spreadsheet; odt2txt %s; copiousoutput; test=[ -z "$DISPLAY" ]
