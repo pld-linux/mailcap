@@ -1,5 +1,5 @@
 image/*; /usr/bin/eog %s; test=[ -n "$DISPLAY" -a -x /usr/bin/eog ]
-image/*; /usr/bin/qiv %s; test=[ -n "$DISPLAY" ]
+image/*; /usr/bin/qiv -R %s; test=[ -n "$DISPLAY" ]
 image/*; /usr/bin/asciiview %s; test=[ -z "$DISPLAY" ]; needsterminal
 image/*; /usr/bin/cacaview %s; test=[ -z "$DISPLAY" ]; needsterminal
 image/*; /usr/bin/identify -verbose %s; copiousoutput
