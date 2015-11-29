@@ -2,28 +2,51 @@
 use .ico for favicon: 
 https://en.wikipedia.org/wiki/ICO_%28file_format%29
 
+add .woff2 and update other font types
+http://dev.w3.org/webfonts/WOFF2/spec/
 
---- mailcap-2.1.45/mime.types~	2015-11-30 00:23:00.000000000 +0200
-+++ mailcap-2.1.45/mime.types	2015-11-30 00:30:49.643174301 +0200
-@@ -1011,6 +1011,8 @@
+--- mailcap-2.1.45/mime.types	2015-09-25 08:37:37.000000000 +0300
++++ mailcap-2.1.45/mime.types	2015-11-30 00:44:22.264811464 +0200
+@@ -99,9 +99,9 @@
+ application/fdt+xml				fdt
+ # fits, fit, fts: image/fits
+ application/fits
+-application/font-sfnt				ttf
++application/font-sfnt
+ application/font-tdpfr				pfr
+-application/font-woff				woff
++application/font-woff
+ application/framework-attributes+xml
+ application/gzip				gz tgz
+ application/H224
+@@ -799,7 +799,7 @@
+ application/vnd.oasis.opendocument.chart-template		otc
+ application/vnd.oasis.opendocument.database			odb
+ application/vnd.oasis.opendocument.formula			odf
+-application/vnd.oasis.opendocument.formula-template		otf
++application/vnd.oasis.opendocument.formula-template
+ application/vnd.oasis.opendocument.graphics			odg
+ application/vnd.oasis.opendocument.graphics-template		otg
+ application/vnd.oasis.opendocument.image			odi
+@@ -1174,6 +1174,8 @@
  application/xcon-conference-info-diff+xml
  application/xcon-conference-info+xml
  application/xenc+xml
 +application/x-rar-compressed			rar
 +application/x-windows-gadget			gadget
  application/xhtml+xml				xhtml xhtm xht
- # application/xhtml-voice+xml obsoleted by application/xv+xml
  # xml, xsd, rng: text/xml
-@@ -1165,7 +1168,7 @@
+ application/xml
+@@ -1380,7 +1382,7 @@
  image/vnd.fujixerox.edmics-mmr			mmr
  image/vnd.fujixerox.edmics-rlc			rlc
  image/vnd.globalgraphics.pgb			pgb
 -image/vnd.microsoft.icon			ico
 +image/vnd.microsoft.icon
  image/vnd.mix
+ image/vnd.mozilla.apng				apng
  image/vnd.ms-modi				mdi
- image/vnd.net-fpx
-@@ -1397,6 +1397,7 @@
+@@ -1395,6 +1397,7 @@
  image/vnd.wap.wbmp				wbmp
  image/vnd.xiff					xif
  image/vnd.zbrush.pcx				pcx
@@ -31,7 +54,7 @@ https://en.wikipedia.org/wiki/ICO_%28file_format%29
  message/CPIM
  message/delivery-status
  message/disposition-notification
-@@ -1280,6 +1284,7 @@
+@@ -1525,6 +1528,7 @@
  text/vnd.wap.sl					sl
  text/vnd.wap.wml				wml
  text/vnd.wap.wmlscript				wmls
@@ -39,7 +62,7 @@ https://en.wikipedia.org/wiki/ICO_%28file_format%29
  text/xml					xml xsd rng
  text/xml-external-parsed-entity			ent
  video/1d-interleaved-parityfec
-@@ -1420,6 +1425,7 @@
+@@ -1671,6 +1675,7 @@
  application/x-troff-ms				ms
  application/x-ustar				ustar
  application/x-wais-source			src
@@ -47,7 +70,14 @@ https://en.wikipedia.org/wiki/ICO_%28file_format%29
  application/x-xpinstall				xpi
  application/x-xspf+xml				xspf
  application/x-xz				xz
-@@ -1542,7 +1542,7 @@
+@@ -1701,10 +1706,14 @@
+ image/x-xbitmap					xbm
+ image/x-xpixmap					xpm
+ image/x-xwindowdump				xwd
++font/otf					otf
++font/ttf					ttf
++font/woff					woff
++font/woff2					woff2
  text/html-sandboxed				sandboxed
  text/x-pod					pod
  text/x-setext					etx
