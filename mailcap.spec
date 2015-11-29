@@ -5,7 +5,7 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make check"
 
-%define		fcver	2.1.43
+%define		fcver	2.1.45
 %define		ver		2.3.%(v=%{fcver}; echo ${v#2.1.})
 Summary:	Defines multimedia helper applications for various programs
 Summary(de.UTF-8):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
@@ -20,7 +20,7 @@ Release:	1
 License:	Public Domain
 Group:		Base
 Source0:	https://fedorahosted.org/released/mailcap/%{name}-%{fcver}.tar.xz
-# Source0-md5:	106996238be763ad2e3e3c814b91228f
+# Source0-md5:	d8d66b3a458f0da327a7c4edfff911a1
 Source1:	%{name}
 Source2:	%{name}.4
 Source3:	run-%{name}

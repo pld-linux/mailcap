@@ -1,5 +1,10 @@
---- mailcap-2.1.40/mime.types~	2013-09-18 18:33:48.000000000 +0300
-+++ mailcap-2.1.40/mime.types	2013-09-18 18:34:43.827318330 +0300
+
+use .ico for favicon: 
+https://en.wikipedia.org/wiki/ICO_%28file_format%29
+
+
+--- mailcap-2.1.45/mime.types~	2015-11-30 00:23:00.000000000 +0200
++++ mailcap-2.1.45/mime.types	2015-11-30 00:30:49.643174301 +0200
 @@ -1011,6 +1011,8 @@
  application/xcon-conference-info-diff+xml
  application/xcon-conference-info+xml
@@ -18,10 +23,10 @@
  image/vnd.mix
  image/vnd.ms-modi				mdi
  image/vnd.net-fpx
-@@ -1176,6 +1179,7 @@
- image/vnd.svf
+@@ -1397,6 +1397,7 @@
  image/vnd.wap.wbmp				wbmp
  image/vnd.xiff					xif
+ image/vnd.zbrush.pcx				pcx
 +image/x-icon					ico
  message/CPIM
  message/delivery-status
