@@ -16,7 +16,7 @@ Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários pr
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	%{ver}
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Base
 Source0:	https://fedorahosted.org/released/mailcap/%{name}-%{fcver}.tar.xz

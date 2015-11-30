@@ -86,3 +86,14 @@ http://dev.w3.org/webfonts/WOFF2/spec/
  video/x-annodex					axv
  video/x-flv					flv
  video/x-javafx					fxm
+--- mailcap-2.1.45/test.pl~	2015-09-25 08:37:37.000000000 +0300
++++ mailcap-2.1.45/test.pl	2015-11-30 08:37:58.326283402 +0200
+@@ -7,7 +7,7 @@
+ my %toplevel;
+ 
+ my %good_toplevel = map { $_ => 1 }
+-  qw(application audio chemical image message model multipart text video
++  qw(application audio chemical font image message model multipart text video
+      x-conference x-epoc);
+ 
+ while (<>) {
