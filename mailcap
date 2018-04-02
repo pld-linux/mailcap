@@ -2,9 +2,9 @@ image/*; /usr/bin/eog %s; test=[ -n "$DISPLAY" -a -x /usr/bin/eog ]
 image/*; /usr/bin/qiv -Rl %s; test=[ -n "$DISPLAY" ]
 image/*; /usr/bin/asciiview %s; test=[ -z "$DISPLAY" ]; needsterminal
 image/*; /usr/bin/cacaview %s; test=[ -z "$DISPLAY" ]; needsterminal
-image/*; /usr/bin/identify -verbose %s; copiousoutput
+image/*; /usr/bin/identify -verbose %s; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
-audio/mpeg; /usr/bin/id3v2 -l %s; copiousoutput
+audio/mpeg; /usr/bin/id3v2 -l %s; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
 audio/mod; /usr/bin/mikmod %s
 
@@ -20,13 +20,13 @@ video/mpeg; /usr/bin/mplayer -vc null -vo null %s; test=[ -z "$DISPLAY" ]
 video/mpeg; /usr/bin/xterm -name mplayer -e /usr/bin/mplayer %s & /bin/sleep 1; test=[ -n "$DISPLAY" ]
 
 application/pdf; /usr/bin/xpdf %s; test=[ -n "$DISPLAY" ]
-application/pdf; /usr/bin/pdftotext -layout -nopgbrk %s -; copiousoutput
+application/pdf; /usr/bin/pdftotext -layout -nopgbrk %s -; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
 application/postscript; /usr/bin/gv -safer %s; test=[ -n "$DISPLAY" ]
-application/postscript; /usr/bin/ps2ascii %s; copiousoutput
+application/postscript; /usr/bin/ps2ascii %s; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
 application/x-dvi; /usr/bin/xdvi %s; test=[ -n "$DISPLAY" ]
-application/x-dvi; /usr/bin/dvi2tty -w123 %s; copiousoutput
+application/x-dvi; /usr/bin/dvi2tty -w123 %s; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
 text/html; /usr/bin/htmlview %s; copiousoutput; test=[ -x /usr/bin/htmlview ]
 text/html; /usr/bin/elinks %s; nametemplate=%s.html; test=[ -z "$DISPLAY" ]
@@ -37,11 +37,11 @@ text/html; /usr/bin/elinks -dump -eval 'set document.codepage.assume = "%{charse
 
 application/x-shockwave-flash; /usr/bin/swfplayer %s & sleep 2; test=[ -n "$DISPLAY" ]
 
-application/rtf; /usr/bin/unrtf --nopict --text --quiet %s; copiousoutput
+application/rtf; /usr/bin/unrtf --nopict --text --quiet %s; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
-application/vnd.oasis.opendocument.presentation; odt2txt %s; copiousoutput; test=[ -z "$DISPLAY" ]
-application/vnd.oasis.opendocument.spreadsheet; odt2txt %s; copiousoutput; test=[ -z "$DISPLAY" ]
-application/vnd.oasis.opendocument.text; odt2txt %s; copiousoutput; test=[ -z "$DISPLAY" ]
+application/vnd.oasis.opendocument.presentation;odt2txt %s; copiousoutput; test=[ -z "$LYNX_VERSION" -a -z "$DISPLAY" ]
+application/vnd.oasis.opendocument.spreadsheet; odt2txt %s; copiousoutput; test=[ -z "$LYNX_VERSION" -a -z "$DISPLAY" ]
+application/vnd.oasis.opendocument.text;	odt2txt %s; copiousoutput; test=[ -z "$LYNX_VERSION" -a -z "$DISPLAY" ]
 
 application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	cd "$tmp"\; /usr/bin/soffice2html.pl %s\; \
@@ -58,7 +58,7 @@ application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 application/vnd.sun.xml.writer; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	cd "$tmp"\; /usr/bin/soffice2html.pl %s\; \
 	/usr/bin/elinks -dump content.html\; \
-	/bin/rm -rf "$tmp"; copiousoutput
+	/bin/rm -rf "$tmp"; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
 application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/wvHtml %s --targetdir="$tmp" page.html -1\; \
@@ -75,7 +75,7 @@ application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 application/msword; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/wvHtml %s --targetdir="$tmp" page.html -1\; \
 	/usr/bin/elinks -dump "$tmp/page.html"\; \
-	/bin/rm -rf "$tmp"; copiousoutput
+	/bin/rm -rf "$tmp"; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
 application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
@@ -92,7 +92,7 @@ application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 application/vnd.ms-excel; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/xlhtml -a %s > "$tmp/page.html"\; \
 	/usr/bin/elinks -dump "$tmp/page.html"\; \
-	/bin/rm -rf "$tmp"; copiousoutput
+	/bin/rm -rf "$tmp"; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
 application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 	/usr/bin/ppthtml %s > "$tmp/page.html"\; \
@@ -109,15 +109,15 @@ application/vnd.ms-powerpoint; tmp=`/bin/mktemp -d %s.XXXXXX`\; \
 application/vnd.ms-powerpoint; tmp=`/bin/mktemp %s.XXXXXX`\; \
 	/usr/bin/ppthtml %s > "$tmp"\; \
 	/usr/bin/elinks -dump "$tmp"\; \
-	/bin/rm -f "$tmp"; copiousoutput
+	/bin/rm -f "$tmp"; copiousoutput; test=[ -z "$LYNX_VERSION" ]
 
-application/x-bzip-compressed-tar; /bin/tar jtvvf %s; copiousoutput
-application/x-tar; /bin/tar tvvf %s; copiousoutput
-application/x-tgz; /bin/tar ztvvf %s; copiousoutput
-application/x-rar-compressed; /usr/bin/unrar v -c- %s; copiousoutput
-application/x-zip-compressed; /usr/bin/unzip -v %s; copiousoutput
-application/zip; /usr/bin/unzip -v %s; copiousoutput
-application/x-rpm; /bin/rpm -qpilv %s; copiousoutput
-application/ms-tnef; /usr/bin/tnef -vt %s; copiousoutput
-application/pgp-encrypted; /usr/bin/gpg -vv %s 2>&1; copiousoutput
-application/pgp-signature; /usr/bin/gpg -vv %s 2>&1; copiousoutput
+application/x-bzip-compressed-tar; /bin/tar jtvvf %s;	copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/x-tar; /bin/tar tvvf %s;			copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/x-tgz; /bin/tar ztvvf %s;			copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/x-rar-compressed; /usr/bin/unrar v -c- %s;	copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/x-zip-compressed; /usr/bin/unzip -v %s;	copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/zip; /usr/bin/unzip -v %s;			copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/x-rpm; /bin/rpm -qpilv %s;			copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/ms-tnef; /usr/bin/tnef -vt %s;		copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/pgp-encrypted; /usr/bin/gpg -vv %s 2>&1;	copiousoutput; test=[ -z "$LYNX_VERSION" ]
+application/pgp-signature; /usr/bin/gpg -vv %s 2>&1;	copiousoutput; test=[ -z "$LYNX_VERSION" ]
