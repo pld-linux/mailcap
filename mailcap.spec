@@ -16,16 +16,18 @@ Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários pr
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	%{ver}
-Release:	2
+Release:	3
 License:	Public Domain
 Group:		Base
 Source0:	https://fedorahosted.org/released/mailcap/%{name}-%{fcver}.tar.xz
 # Source0-md5:	d8d66b3a458f0da327a7c4edfff911a1
 Source1:	%{name}
 Source2:	%{name}.4
+# https://anonscm.debian.org/git/collab-maint/mime-support.git/log/run-mailcap
 Source3:	run-%{name}
 Source4:	run-%{name}.man
 Patch0:		mime.types.patch
+Patch1:		run-mailcap-mktemp.patch
 URL:		http://git.fedorahosted.org/git/?p=mailcap.git
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	tar >= 1:1.22
@@ -109,7 +111,8 @@ paketini kullanamalarına olanak sağlar (zgv kurulmuş olmalı).
 %prep
 %setup -q -n %{name}-%{fcver}
 %patch0 -p1
-cp -a %{SOURCE1} mailcap
+cp -a %{SOURCE1} %{SOURCE3} .
+%patch1
 
 %if "%{pld_release}" == "ac"
 %{__sed} -i -e 's,/usr/bin/xterm,/usr/X11R6/bin/xterm,g' mailcap
@@ -123,10 +126,11 @@ cp -a %{SOURCE1} mailcap
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_mandir}/man{1,4},%{_bindir}}
+
 cp -p mailcap mime.types $RPM_BUILD_ROOT%{_sysconfdir}
 cp -p %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/man4
 cp -p %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/man1/run-%{name}.1
-install -p %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}
+cp -p run-mailcap $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
