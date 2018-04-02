@@ -67,6 +67,7 @@ Suggests:	X11
 Suggests:	xterm
 %endif
 %{?with_tests:BuildRequires:perl-base}
+Conflicts:	lesspipe < 1.57-4
 Conflicts:	rpm < 4.4.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
