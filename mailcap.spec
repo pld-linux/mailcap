@@ -111,9 +111,9 @@ paketini kullanamalarına olanak sağlar (zgv kurulmuş olmalı).
 
 %prep
 %setup -q -n %{name}-%{fcver}
-%patch0 -p1
+%patch -P0 -p1
 cp -a %{SOURCE1} %{SOURCE3} .
-%patch1
+%patch -P1
 
 %if "%{pld_release}" == "ac"
 %{__sed} -i -e 's,/usr/bin/xterm,/usr/X11R6/bin/xterm,g' mailcap
