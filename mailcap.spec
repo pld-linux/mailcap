@@ -5,7 +5,7 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make check"
 
-%define		fcver	2.1.45
+%define		fcver	2.1.54
 %define		ver		2.3.%(v=%{fcver}; echo ${v#2.1.})
 Summary:	Defines multimedia helper applications for various programs
 Summary(de.UTF-8):	Definiert Multimedia-Hilfsapplikationen für diverse Programme
@@ -16,11 +16,11 @@ Summary(pt_BR.UTF-8):	Define aplicações auxiliares multimídia para vários pr
 Summary(tr.UTF-8):	Çeşitli programlar için çokluortam yardımcı uygulamaları tanımlar
 Name:		mailcap
 Version:	%{ver}
-Release:	4
+Release:	1
 License:	Public Domain
 Group:		Base
-Source0:	https://fedorahosted.org/released/mailcap/%{name}-%{fcver}.tar.xz
-# Source0-md5:	d8d66b3a458f0da327a7c4edfff911a1
+Source0:	https://pagure.io/mailcap/archive/r2-1-54/%{name}-r2-1-54.tar.gz
+# Source0-md5:	44960f1b89c0cc9ca788a39981e1973d
 Source1:	%{name}
 Source2:	%{name}.4
 # https://anonscm.debian.org/git/collab-maint/mime-support.git/log/run-mailcap
@@ -28,10 +28,9 @@ Source3:	run-%{name}
 Source4:	run-%{name}.man
 Patch0:		mime.types.patch
 Patch1:		run-mailcap-mktemp.patch
-URL:		http://git.fedorahosted.org/git/?p=mailcap.git
+URL:		https://pagure.io/mailcap
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	xz
 Suggests:	ImageMagick-coder-jpeg
 Suggests:	ImageMagick-coder-png
 Suggests:	aview
@@ -110,7 +109,7 @@ lynx gibi programların resim göstermek için otomatik olarak zgv
 paketini kullanamalarına olanak sağlar (zgv kurulmuş olmalı).
 
 %prep
-%setup -q -n %{name}-%{fcver}
+%setup -q -n %{name}-r2-1-54
 %patch -P0 -p1
 cp -a %{SOURCE1} %{SOURCE3} .
 %patch -P1

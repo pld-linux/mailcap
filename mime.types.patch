@@ -1,83 +1,6 @@
-
-use .ico for favicon: 
-https://en.wikipedia.org/wiki/ICO_%28file_format%29
-
-add .woff2 and update other font types
-http://dev.w3.org/webfonts/WOFF2/spec/
-
---- mailcap-2.1.45/mime.types	2015-09-25 08:37:37.000000000 +0300
-+++ mailcap-2.1.45/mime.types	2015-11-30 00:44:22.264811464 +0200
-@@ -99,9 +99,9 @@
- application/fdt+xml				fdt
- # fits, fit, fts: image/fits
- application/fits
--application/font-sfnt				ttf
-+application/font-sfnt
- application/font-tdpfr				pfr
--application/font-woff				woff
-+application/font-woff
- application/framework-attributes+xml
- application/gzip				gz tgz
- application/H224
-@@ -799,7 +799,7 @@
- application/vnd.oasis.opendocument.chart-template		otc
- application/vnd.oasis.opendocument.database			odb
- application/vnd.oasis.opendocument.formula			odf
--application/vnd.oasis.opendocument.formula-template		otf
-+application/vnd.oasis.opendocument.formula-template
- application/vnd.oasis.opendocument.graphics			odg
- application/vnd.oasis.opendocument.graphics-template		otg
- application/vnd.oasis.opendocument.image			odi
-@@ -1174,6 +1174,8 @@
- application/xcon-conference-info-diff+xml
- application/xcon-conference-info+xml
- application/xenc+xml
-+application/x-rar-compressed			rar
-+application/x-windows-gadget			gadget
- application/xhtml+xml				xhtml xhtm xht
- # xml, xsd, rng: text/xml
- application/xml
-@@ -1380,7 +1382,7 @@
- image/vnd.fujixerox.edmics-mmr			mmr
- image/vnd.fujixerox.edmics-rlc			rlc
- image/vnd.globalgraphics.pgb			pgb
--image/vnd.microsoft.icon			ico
-+image/vnd.microsoft.icon
- image/vnd.mix
- image/vnd.mozilla.apng				apng
- image/vnd.ms-modi				mdi
-@@ -1395,6 +1397,7 @@
- image/vnd.wap.wbmp				wbmp
- image/vnd.xiff					xif
- image/vnd.zbrush.pcx				pcx
-+image/x-icon					ico
- message/CPIM
- message/delivery-status
- message/disposition-notification
-@@ -1525,6 +1528,7 @@
- text/vnd.wap.sl					sl
- text/vnd.wap.wml				wml
- text/vnd.wap.wmlscript				wmls
-+text/x-component				htc
- text/xml					xml xsd rng
- text/xml-external-parsed-entity			ent
- video/1d-interleaved-parityfec
-@@ -1671,6 +1675,7 @@
- application/x-troff-ms				ms
- application/x-ustar				ustar
- application/x-wais-source			src
-+application/x-x509-ca-cert			crt
- application/x-xpinstall				xpi
- application/x-xspf+xml				xspf
- application/x-xz				xz
-@@ -1701,10 +1706,14 @@
- image/x-xbitmap					xbm
- image/x-xpixmap					xpm
- image/x-xwindowdump				xwd
-+font/otf					otf
-+font/ttf					ttf
-+font/woff					woff
-+font/woff2					woff2
+--- mailcap-r2-1-54.orig/mime.types	2023-05-23 18:18:12.000000000 +0200
++++ mailcap-r2-1-54/mime.types	2026-03-14 01:16:13.146015595 +0100
+@@ -2247,7 +2247,7 @@
  text/html-sandboxed				sandboxed
  text/x-pod					pod
  text/x-setext					etx
@@ -86,14 +9,11 @@ http://dev.w3.org/webfonts/WOFF2/spec/
  video/x-annodex					axv
  video/x-flv					flv
  video/x-javafx					fxm
---- mailcap-2.1.45/test.pl~	2015-09-25 08:37:37.000000000 +0300
-+++ mailcap-2.1.45/test.pl	2015-11-30 08:37:58.326283402 +0200
-@@ -7,7 +7,7 @@
- my %toplevel;
- 
- my %good_toplevel = map { $_ => 1 }
--  qw(application audio chemical image message model multipart text video
-+  qw(application audio chemical font image message model multipart text video
-      x-conference x-epoc);
- 
- while (<>) {
+@@ -2262,3 +2262,7 @@
+ video/x-sgi-movie				movie
+ x-conference/x-cooltalk				ice
+ x-epoc/x-sisx-app				sisx
++
++# PLD additions
++application/x-windows-gadget			gadget
++text/x-component				htc
